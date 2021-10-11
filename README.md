@@ -1,7 +1,7 @@
 <ol>
-<h3>
-<a href="https://leetcode.com/problems/sort-colors/"><li>Sort 012</li></a>
-</h3>
+<li><h4>
+<a href="https://leetcode.com/problems/sort-colors/">Sort 012</a>
+</h4></li>
 
 ```
 i = 0
@@ -9,8 +9,8 @@ j = 0
 k = n - 1
 
 while i <= k
-if (nums[i] == 1)
-i++
+    if (nums[i] == 1)
+        i++
 
     else if (nums[i] == 0)
         swap(nums, i, j)
