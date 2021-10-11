@@ -23,9 +23,9 @@ while i <= k
 
 ```
 
-<h4><li>
-<a href="https://leetcode.com/problems/missing-number/">Missing Number</a>
-</li></h4>
+<h4><li><a href="https://leetcode.com/problems/missing-number/">
+Missing Number
+</a></li></h4>
 
 ```
 
@@ -38,7 +38,9 @@ missing number: xor
 
 ```
 
-[**2.2. Missing Number & Repeating Number**](https://www.pepcoding.com/resources/data-structures-and-algorithms-in-java-levelup/bit-manipulation/one-repeating-and-one-missing-official/ojquestion)
+<h4><li><a href="https://www.pepcoding.com/resources/data-structures-and-algorithms-in-java-levelup/bit-manipulation/one-repeating-and-one-missing-official/ojquestion">
+Missing Number & Repeating Number
+</a></li></h4>
 
 ```
 
@@ -76,10 +78,11 @@ repeating number: x
 
 ```
 
-[**3. Merge two sorted Arrays without extra space**](https://leetcode.com/problems/merge-sorted-array/)
+<h4><li><a href="https://leetcode.com/problems/merge-sorted-array/">
+Merge two sorted Arrays without extra space
+</a></li></h4>
 
 ```
-
 i = n - 1
 j = m - 1
 k = n + m - 1
@@ -94,52 +97,57 @@ nums1[k--] = nums2[j--]
 
 ```
 
-[**4. Maximum SubArray (Kadane's algorithm)**](https://leetcode.com/problems/maximum-subarray/)
+<h4><li><a href="https://leetcode.com/problems/maximum-subarray/">
+Maximum SubArray
+</a></li></h4>
 
 ```
-
+approach: Kadane's algorithm
 currentSum = -∞
 overallSum = -∞
 
 i: 0 -> n
-{
-currentSum = (currentSum >= 0) ? currentSum + val : val
-overallSum = max(overallSum, currentSum)
-}
+    currentSum = (currentSum >= 0) ? currentSum + val : val
+    overallSum = max(overallSum, currentSum)
+
 
 maximumSum: overallSum
 
 ```
 
-[**5. Merge Overlapping Interval**](https://www.pepcoding.com/resources/online-java-foundation/stacks-and-queues/merge-overlapping-interval-official/ojquestion)
+<h4><li><a href="https://www.pepcoding.com/resources/online-java-foundation/stacks-and-queues/merge-overlapping-interval-official/ojquestion">
+Merge Overlapping Interval
+</a></li></h4>
 
 ```
 
-intervals{startTime, endTime}[n]
-Stack of intervals: st
-Stackof intervals: result
+given: intervals[n] = {startTime, endTime}
+Stack<Interval> st
+Stack<Intervals> result
 
 sort(intervals)
 st.push(intervals[0])
 
 i: 1 -> n - 1
-{
-currInterval = st.peek()
+    currInterval = st.peek
 
     intervals[i].startTime <= currInterval.endTime
         ? currInterval.endTime = max(currInterval.endTime, intervals[i].endTime)
         : st.push(intervals[i])
 
-}
 
-while (st.size() != 0)
-result.push(st.pop())
+while st.size != 0
+    result.push(st.pop)
 
+merged intervals: result
 ```
 
-[**6.1. Detect Cycle (Floyd's Tortoise and Hare Algorithm)**](https://leetcode.com/problems/linked-list-cycle-ii/)
+<h4><li><a href="https://leetcode.com/problems/linked-list-cycle-ii/">
+Detect Cycle
+</a></li></h4>
 
 ```
+approach: Floyd's Tortoise and Hare Algorithm
 
 slow = fast = head
 
@@ -165,7 +173,9 @@ cycle starting point: slow
 
 ```
 
-[**6.2. Find the Duplicate Number**](https://leetcode.com/problems/find-the-duplicate-number/)
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
 
 ```
 
@@ -187,7 +197,9 @@ duplicate number: slow
 
 ```
 
-[**7. Set Matrix Zeroes**](https://leetcode.com/problems/set-matrix-zeroes/)
+<h4><li><a href="https://leetcode.com/problems/set-matrix-zeroes/">
+Set Matrix Zeroes
+</a></li></h4>
 
 ```
 
@@ -230,7 +242,9 @@ matrix[0][i] = 0
 
 ```
 
-[**8. Pascal Triangle**](https://leetcode.com/problems/pascals-triangle/)
+<h4><li><a href="https://leetcode.com/problems/pascals-triangle/">
+Pascal Triangle
+</a></li></h4>
 
 ```
 
@@ -257,7 +271,9 @@ pascal triangle: triangle
 
 ```
 
-[**9. Next Permutation**](https://leetcode.com/problems/next-permutation/)
+<h4><li><a href="https://leetcode.com/problems/next-permutation/">
+Next Permutation
+</a></li></h4>
 
 ```
 
@@ -283,7 +299,9 @@ reverse(nums, pivotIndex + 1, n)
 
 ```
 
-[**10. Count Inversions in an array**](https://www.geeksforgeeks.org/counting-inversions/)
+<h4><li><a href="https://www.geeksforgeeks.org/counting-inversions/">
+Count Inversions in an array
+</a></li></h4>
 
 ```
 
@@ -298,7 +316,7 @@ mergeAndCount (arr, l, m, r)
     k = l
     swaps = 0
 
-    while (i < left.length && j < right.length)
+    while i < left.length AND j < right.length
         if (left[i] <= right[j])
             arr[k++] = left[i++]
 
@@ -334,22 +352,26 @@ mergeSortAndCount(arr, l, r)
 
 ```
 
-[**11. Best Time to Buy and Sell Stock**](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
+<h4><li><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/">
+Best Time to Buy and Sell Stock
+</a></li></h4>
 
 ```
-
 minPrice = ∞
 maxProfit = 0
 
 i: 0 -> n - 1
-if (minPrice > prices[i]) minPrice=prices[i]
-else if (maxProfit < prices[i]-minPrice) maxProfit=prices[i]-minPrice
+    if minPrice > prices[i]
+        minPrice=prices[i]
+    elif maxProfit < prices[i]-minPrice
+        maxProfit=prices[i]-minPrice
 
 max profit : maxProfit
-
 ```
 
-[**12. Best Time to Buy and Sell Stock**](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
+<h4><li><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/">
+Best Time to Buy and Sell Stock
+</a></li></h4>
 
 ```
 
@@ -364,7 +386,9 @@ max profit : maxProfit
 
 ```
 
-[**13. Rotate Image**](https://leetcode.com/problems/rotate-image/)
+<h4><li><a href="https://leetcode.com/problems/rotate-image/">
+Rotate Image
+</a></li></h4>
 
 ```
 
@@ -379,6 +403,10 @@ j: 0 -> (n/2)
 swap(matrix[i][j], matrix[i][n - j - 1])
 
 ```
+
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
 
 [**14. Search a 2D Matrix**](https://leetcode.com/problems/search-a-2d-matrix/)
 
@@ -406,6 +434,10 @@ return false
 
 ```
 
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
+
 [**15. Search a 2D Matrix**](https://leetcode.com/problems/search-a-2d-matrix/)
 
 ```
@@ -430,6 +462,10 @@ return x \* myPow(myPow(x, n/2), 2)
 
 ```
 
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
+
 [**16.1. Majority Element I (more than n/2 times)**](https://leetcode.com/problems/majority-element/)
 
 ```
@@ -446,6 +482,10 @@ candidate = nums[i]
 majority element: candidate
 
 ```
+
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
 
 [**16.2. Majority Element II (more than n/3 times)**](https://leetcode.com/problems/search-a-2d-matrix/)
 
@@ -496,6 +536,10 @@ return result
 
 ```
 
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
+
 [**17. Unique Paths**](https://leetcode.com/problems/unique-paths/)
 
 ```
@@ -519,6 +563,10 @@ dp[i][j] = 1
 number of unique paths: dp[0][0]
 
 ```
+
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
 
 [**18. Reverse Pairs**](https://leetcode.com/problems/reverse-pairs/)
 
@@ -564,6 +612,10 @@ arr[high - low + 1]
 
 ```
 
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
+
 [**19.1. Two Sum**](https://leetcode.com/problems/two-sum/)
 
 ```
@@ -582,6 +634,10 @@ return result
 return result
 
 ```
+
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
 
 [**19.2. 3Sum**](https://leetcode.com/problems/3sum/)
 
@@ -619,11 +675,19 @@ return res
 
 ```
 
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
+
 [**19.3. Four Sum**](https://leetcode.com/problems/4sum/)
 
 ```
 
 ```
+
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
 
 [**20. Longest Consecutive Sequence**](https://leetcode.com/problems/longest-consecutive-sequence/)
 
@@ -632,23 +696,27 @@ return res
 res = 0
 HashMap<Integer, Integer> map
 for (n : num)
-if (!map.containsKey(n)) {
+if !map.containsKey(n)
 
-        left = (map.containsKey(n - 1)) ? map.get(n - 1) : 0
-        right = (map.containsKey(n + 1)) ? map.get(n + 1) : 0
+    left = (map.containsKey(n - 1)) ? map.get(n - 1) : 0
+    right = (map.containsKey(n + 1)) ? map.get(n + 1) : 0
 
-        length = left + right + 1
+    length = left + right + 1
 
-        map.put(n, length)
-        map.put(n - left, length)
-        map.put(n + right, length)
+    map.put(n, length)
+    map.put(n - left, length)
+    map.put(n + right, length)
 
-        res = max(res, length)
-    }
+    res = max(res, length)
+
 
 longest consecutive sequence length: res
 
 ```
+
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
 
 [**21. Subarray Sum Equals K**](https://leetcode.com/problems/subarray-sum-equals-k/)
 
@@ -669,6 +737,10 @@ result += preSum.get(sum - k)
 number of subarrays where sum equals k: result
 
 ```
+
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
 
 [**22. Count the number of subarrays having a given XOR**](https://www.geeksforgeeks.org/count-number-subarrays-given-xor/)
 
@@ -701,6 +773,10 @@ number of subarrays having a given XOR: ans
 
 ```
 
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
+
 [**23. Longest Substring Without Repeating Characters**](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
 
 ```
@@ -719,6 +795,10 @@ longest substring length: max
 
 ```
 
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
+
 [**24. Reverse Linked List**](https://leetcode.com/problems/reverse-linked-list/)
 
 ```
@@ -734,6 +814,10 @@ new head: newHead
 
 ```
 
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
+
 [**25. Middle of the Linked List**](https://leetcode.com/problems/middle-of-the-linked-list/)
 
 ```
@@ -748,6 +832,10 @@ fast = fast.next.next
 middle: slow
 
 ```
+
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
 
 [**26. Remove Nth Node From End of List**](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
 
@@ -770,6 +858,10 @@ new head: start.next
 
 ```
 
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
+
 [**27. Delete Node in a Linked List**](https://leetcode.com/problems/delete-node-in-a-linked-list/)
 
 ```
@@ -778,6 +870,10 @@ node.val = node.next.val
 node.next = node.next.next
 
 ```
+
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
 
 [**28. Add Two Numbers**](https://leetcode.com/problems/add-two-numbers/)
 
@@ -808,6 +904,10 @@ head of answer linked list: dummy.next
 
 ```
 
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
+
 [**29. Intersection of Two Linked Lists**](https://leetcode.com/problems/intersection-of-two-linked-lists/)
 
 ```
@@ -822,6 +922,10 @@ b = b == null ? headA : b.next
 intersection point: a
 
 ```
+
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
 
 [**30. Reverse Nodes in k-Group**](https://leetcode.com/problems/reverse-nodes-in-k-group/)
 
@@ -853,6 +957,10 @@ new head: dummy.next
 
 ```
 
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
+
 [**31. Palindrome Linked List**](https://leetcode.com/problems/palindrome-linked-list/)
 
 ```
@@ -881,6 +989,10 @@ i = stack.pop()
 palindrome: isPalindrome
 
 ```
+
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
 
 [**32. Flatten a Multilevel Doubly Linked List**](https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/)
 
@@ -915,6 +1027,10 @@ return head
 
 ```
 
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
+
 [**33. Flatten a Multilevel Doubly Linked List**](https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/)
 
 ```
@@ -944,6 +1060,10 @@ return head
 
 ```
 
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
+
 [**34. Clone a Linked List with random and next pointer**](https://leetcode.com/problems/copy-list-with-random-pointer/)
 
 ```
@@ -965,6 +1085,10 @@ pointer = pointer.next
 head: map.get(head)
 
 ```
+
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
 
 [**35. Trapping Rain Water**](https://leetcode.com/problems/trapping-rain-water/submissions/)
 
@@ -994,6 +1118,10 @@ return area
 
 ```
 
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
+
 [**36. Remove Duplicate from Sorted array**](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
 
 ```
@@ -1009,6 +1137,10 @@ number of unique elements: n - count
 
 ```
 
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
+
 [**37. Max Consecutive Ones**](https://leetcode.com/problems/max-consecutive-ones/)
 
 ```
@@ -1023,6 +1155,10 @@ max = max(max, maxHere)
 max number of consecutive ones: max
 
 ```
+
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
 
 [**38.1.1 Find maximum meetings in one room**](https://www.geeksforgeeks.org/find-maximum-meetings-in-one-room/)
 
@@ -1057,6 +1193,10 @@ maximum number of meetings sequence: result
 
 ```
 
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
+
 [**38.1.2 Activity Selection Problem**](https://www.geeksforgeeks.org/activity-selection-problem-greedy-algo-1/)
 
 ```
@@ -1079,6 +1219,10 @@ i = j
 selected activities: res
 
 ```
+
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
 
 [**38.2. Minimum Number of Platforms Required for a Railway/Bus Station**](https://www.geeksforgeeks.org/minimum-number-platforms-required-railwaybus-station/)
 
@@ -1113,6 +1257,10 @@ minimum number of platforms: result
 
 ```
 
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
+
 [**38.3. Maximum Profit in Job Scheduling**](https://leetcode.com/problems/maximum-profit-in-job-scheduling/)
 
 ```
@@ -1141,6 +1289,10 @@ cur = dp.floorEntry(job.startTime).getValue + job.profit
 maximum profit: dp.lastEntry.getValue
 
 ```
+
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
 
 [**39. Fractional Knapsack Problem**](https://www.geeksforgeeks.org/fractional-knapsack-problem/)
 
@@ -1175,6 +1327,10 @@ max profit: totalValue
 
 ```
 
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
+
 [**40. Coin Change**](https://leetcode.com/problems/coin-change/)
 
 ```
@@ -1194,6 +1350,10 @@ min = Integer.MAX_VALUE
 minimum number of coins: dp[amount]
 
 ```
+
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
 
 [**41.1 Subsets**](https://leetcode.com/problems/subsets/)
 
@@ -1216,6 +1376,10 @@ list.add(tempList)
         tempList.remove(tempList.size - 1)
 
 ```
+
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
 
 [**41.2 Subsets II (contains duplicates)**](https://leetcode.com/problems/subsets-ii/)
 
@@ -1241,6 +1405,10 @@ list.add(tempList)
 
 ```
 
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
+
 [**41.3 Combination Sum**](https://leetcode.com/problems/combination-sum/)
 
 ```
@@ -1265,6 +1433,10 @@ return
             tempList.remove(tempList.size() - 1)
 
 ```
+
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
 
 [**41.4 Combination Sum II**](https://leetcode.com/problems/combination-sum-ii/)
 
@@ -1295,6 +1467,10 @@ return
 
 ```
 
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
+
 [**41.5 Palindrome Partitioning**](https://leetcode.com/problems/palindrome-partitioning/)
 
 ```
@@ -1316,6 +1492,10 @@ backtrack(list, tempList, s, i + 1)
 tempList.remove(tempList.size - 1)
 
 ```
+
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
 
 [**41.6 K-th Permutation Sequence**](https://leetcode.com/problems/permutation-sequence/)
 
@@ -1341,6 +1521,10 @@ k-th permutation sequence: sb.toString
 
 ```
 
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
+
 [**41.6 Permutations (no duplicates)**](https://leetcode.com/problems/permutations/)
 
 ```
@@ -1365,6 +1549,10 @@ continue
         tempList.remove(tempList.size - 1)
 
 ```
+
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
 
 [**42.1. N-Queens**](https://leetcode.com/problems/n-queens/)
 
@@ -1427,6 +1615,10 @@ List<String> path
 
 ```
 
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
+
 [**42.2. Sudoku Solver**](https://leetcode.com/problems/sudoku-solver/)
 
 ```
@@ -1480,6 +1672,10 @@ grid[i / 3][j / 3] |= (1 << digit)
 
 ```
 
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
+
 [**43. m Coloring Problem**](https://www.geeksforgeeks.org/m-coloring-problem-backtracking-5/)
 
 ```
@@ -1525,6 +1721,10 @@ canPaint (nodes, n, m)
     return maxColors
 
 ```
+
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
 
 [**44. Rat in a Maze**](https://www.geeksforgeeks.org/rat-in-a-maze-backtracking-2/)
 
@@ -1582,6 +1782,10 @@ return true
 
 ```
 
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
+
 [**45. Word Break**](https://leetcode.com/problems/word-break/)
 
 ```
@@ -1602,6 +1806,10 @@ break
 is word break possible: f[s.length()]
 
 ```
+
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
 
 [**46. N-th root of a number**](https://www.geeksforgeeks.org/calculating-n-th-real-root-using-binary-search/)
 
@@ -1639,6 +1847,10 @@ while abs((pow(guess, n)) - x) >= epsilon
 n-th root of a number: guess
 
 ```
+
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
 
 [**47. Find median in row wise sorted matrix**](https://www.geeksforgeeks.org/find-median-row-wise-sorted-matrix/)
 
@@ -1691,6 +1903,10 @@ median: min
 
 ```
 
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
+
 [**48. Single Element in a Sorted Array**](https://leetcode.com/problems/single-element-in-a-sorted-array/)
 
 ```
@@ -1712,6 +1928,10 @@ temp = mid ^ 1
 search index: lo
 
 ```
+
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
 
 [**49. Search in Rotated Sorted Array**](https://leetcode.com/problems/search-in-rotated-sorted-array/)
 
@@ -1745,6 +1965,10 @@ while lo < hi
 search index: nums[lo] == target ? lo : -1
 
 ```
+
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
 
 [**50. Median of Two Sorted Arrays**](https://leetcode.com/problems/median-of-two-sorted-arrays/)
 
@@ -1785,6 +2009,10 @@ return B[bStart + k - 1]
 
 ```
 
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
+
 [**51. Allocate minimum number of pages**](https://www.geeksforgeeks.org/allocate-minimum-number-pages/)
 
 ```
@@ -1822,11 +2050,19 @@ return arr2[k]
 
 ```
 
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
+
 [**52. Aggressive cows**](https://www.spoj.com/problems/AGGRCOW/)
 
 ```
 
 ```
+
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
 
 [**53. Power Set**](https://leetcode.com/problems/search-a-2d-matrix/)
 
@@ -1848,6 +2084,10 @@ List<Integer> set
 power set: powerSet
 
 ```
+
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
 
 [**54.1. Implementing Stack using Arrays**](https://www.geeksforgeeks.org/stack-data-structure-introduction-program/)
 
@@ -1902,6 +2142,10 @@ a[MAX]
 }
 
 ```
+
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
 
 [**54.2. Implement Queue using Arrays**](https://www.geeksforgeeks.org/array-implementation-of-queue-simple/)
 
@@ -1963,6 +2207,10 @@ int queue[]
 
 ```
 
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
+
 [**55.1. Implement Stack using Queues**](https://leetcode.com/problems/implement-stack-using-queues/)
 
 ```
@@ -1994,6 +2242,10 @@ MyStack {
 }
 
 ```
+
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
 
 [**55.2. Implement Queue using Stacks**](https://leetcode.com/problems/implement-queue-using-stacks/)
 
@@ -2036,6 +2288,10 @@ Stack<Integer> s2
 
 ```
 
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
+
 [**56. Valid Parentheses**](https://leetcode.com/problems/valid-parentheses/)
 
 ```
@@ -2061,6 +2317,10 @@ return stack.isEmpty
 
 ```
 
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
+
 [**57.1 Next Greater Element I**](https://leetcode.com/problems/next-greater-element-i/)
 
 ```
@@ -2084,6 +2344,10 @@ next greater element array: findNums
 
 ```
 
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
+
 [**57.2 Next Smaller Element**](https://www.geeksforgeeks.org/next-smaller-element/)
 
 ```
@@ -2105,6 +2369,10 @@ findNums[i] = map.getOrDefault(findNums[i], -1)
 next smaller element array: findNums
 
 ```
+
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
 
 [**58. Sort a stack using recursion**](https://www.geeksforgeeks.org/sort-a-stack-using-recursion/)
 
@@ -2130,7 +2398,7 @@ sortStack(s)
 {
 if !s.isEmpty
 <- Remove the top item ->
-int x = s.pop()
+int x = s.pop
 
         <- Sort remaining stack ->
         sortStack(s)
@@ -2142,15 +2410,19 @@ int x = s.pop()
 
 ```
 
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
+
 [**59. LRU Cache Implementation**](https://www.geeksforgeeks.org/lru-cache-implementation/)
 
 ```
 
 LRUCache
-{
-private Deque<Integer> doublyQueue
-private HashSet<Integer> hashSet
-private final int CACHE_SIZE
+
+    Deque<Integer> doublyQueue
+    HashSet<Integer> hashSet
+    int CACHE_SIZE
 
     LRUCache (capacity)
     	CACHE_SIZE = capacity
@@ -2173,9 +2445,13 @@ private final int CACHE_SIZE
     	while itr.hasNext
     		sout(itr.next)
 
-}
+
 
 ```
+
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
 
 [**60. Largest Rectangle in Histogram**](https://leetcode.com/problems/largest-rectangle-in-histogram/)
 
@@ -2214,6 +2490,10 @@ return maxArea
 
 ```
 
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
+
 [**61. Sliding Window Maximum**](https://leetcode.com/problems/sliding-window-maximum/)
 
 ```
@@ -2241,6 +2521,10 @@ q.poll
 return r
 
 ```
+
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
 
 [**62. Min Stack**](https://leetcode.com/problems/min-stack/)
 
@@ -2282,6 +2566,10 @@ head
 }
 
 ```
+
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
 
 [**63. Rotting Oranges**](https://leetcode.com/problems/rotting-oranges/)
 
@@ -2339,6 +2627,10 @@ return count_fresh == 0 ? count - 1 : -1
 
 ```
 
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
+
 [**64.1. Z algorithm (Linear time pattern searching Algorithm)**](https://www.geeksforgeeks.org/z-algorithm-linear-time-pattern-searching-algorithm/)
 
 ```
@@ -2384,6 +2676,10 @@ R = 0
                 R--
 
 ```
+
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
 
 [**64.2. KMP Algorithm for Pattern Searching**](https://www.geeksforgeeks.org/kmp-algorithm-for-pattern-searching/)
 
@@ -2435,6 +2731,10 @@ lps[0] = 0
 
 ```
 
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
+
 [**65. Minimum characters to be added at front to make string palindrome**](https://www.geeksforgeeks.org/minimum-characters-added-front-make-string-palindrome/)
 
 ```
@@ -2479,6 +2779,10 @@ s.append(str)
 
 ```
 
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
+
 [**66. Check whether two strings are anagram of each other**](https://www.geeksforgeeks.org/check-whether-two-strings-are-anagram-of-each-other/)
 
 ```
@@ -2500,6 +2804,10 @@ return false
 return true
 
 ```
+
+<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
+Find the Duplicate Number
+</a></li></h4>
 
 [**67. Count and Say**](https://leetcode.com/problems/count-and-say/)
 
