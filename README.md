@@ -1,5 +1,5 @@
 <ol>
-<a href="https://leetcode.com/problems/sort-colors/"><li><h3>Sort 012</h3></li></a>
+<a href="https://leetcode.com/problems/sort-colors/"><li>Sort 012</li></a>
 
 ```
 i = 0
