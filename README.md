@@ -1,4 +1,5 @@
-[**1. Sort 012**](https://leetcode.com/problems/sort-colors/)
+<ol>
+<a href="https://leetcode.com/problems/sort-colors/"><h1><li>Sort 012</li></a>
 
 ```
 i = 0
@@ -20,7 +21,8 @@ while i <= k
 
 ```
 
-[**2.1. Missing Number**](https://leetcode.com/problems/missing-number/)
+</h1>
+<a href="https://leetcode.com/problems/missing-number/"><h1><li>Missing Number</li></h1></a>
 
 ```
 xor = nums.length
@@ -2395,38 +2397,47 @@ return true
 [**67. Count and Say**](https://leetcode.com/problems/count-and-say/)
 
 ```
-public String countAndSay(int n) {
-        String s = "1";
-        for(int i = 1; i < n; i++){
-            s = countIdx(s);
-        }
-        return s;
-    }
+countAndSay (n)
+    s = "1"
 
-    public String countIdx(String s){
-        StringBuilder sb = new StringBuilder();
-        char c = s.charAt(0);
-        int count = 1;
-        for(int i = 1; i < s.length(); i++){
-            if(s.charAt(i) == c){
-                count++;
-            }
-            else
-            {
-                sb.append(count);
-                sb.append(c);
-                c = s.charAt(i);
-                count = 1;
-            }
-        }
-        sb.append(count);
-        sb.append(c);
-        return sb.toString();
-    }
-```
+    i: 1 -> n - 1
+        s = countIdx(s)
 
-[**68. Search a 2D Matrix**](https://leetcode.com/problems/search-a-2d-matrix/)
+    return s
+
+
+countIdx (s)
+    StringBuilder sb
+    c = s[0]
+    count = 1
+
+    i: 1 -> s.length - 1
+        if s[i] == c
+            count++
+
+        else
+            sb.append(count)
+            sb.append(c)
+            c = s[i]
+            count = 1
+
+    sb.append(count)
+    sb.append(c)
+
+    return sb.toString
 
 ```
 
+[**68. Compare Version Numbers**](https://leetcode.com/problems/compare-version-numbers/)
+
 ```
+
+```
+
+[**69. Search a 2D Matrix**](https://leetcode.com/problems/search-a-2d-matrix/)
+
+```
+
+```
+
+</ol>
