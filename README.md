@@ -1,6 +1,6 @@
 <ol>
 <li><h4>
-<a href="https://leetcode.com/problems/sort-colors/">Sort 012</a>
+<a target="_blank" href="https://leetcode.com/problems/sort-colors/">Sort 012</a>
 </h4></li>
 
 ```
