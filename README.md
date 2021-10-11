@@ -1,6 +1,6 @@
 <ol>
 <li><h4>
-<a target="_blank" href="https://leetcode.com/problems/sort-colors/">Sort 012</a>
+<a href="https://leetcode.com/problems/sort-colors/">Sort 012</a>
 </h4></li>
 
 ```
@@ -23,7 +23,9 @@ while i <= k
 
 ```
 
-<!-- <a href="https://leetcode.com/problems/missing-number/"><h3><li>Missing Number</li></h3></a> -->
+<h4><li>
+<a href="https://leetcode.com/problems/missing-number/">Missing Number</a>
+</li></h4>
 
 ```
 
