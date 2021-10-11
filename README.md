@@ -1,5 +1,5 @@
 <ol>
-<a href="https://leetcode.com/problems/sort-colors/"><h1><li>Sort 012</li></a>
+<a href="https://leetcode.com/problems/sort-colors/"><h1><li>Sort 012</h1></li></a>
 
 ```
 i = 0
@@ -21,7 +21,6 @@ while i <= k
 
 ```
 
-</h1>
 <a href="https://leetcode.com/problems/missing-number/"><h1><li>Missing Number</li></h1></a>
 
 ```
