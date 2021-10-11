@@ -955,7 +955,7 @@ max = 0
 
 for (n: nums)
     maxHere = (n == 0) ? 0 : maxHere + 1
-    max = Math.max(max, maxHere)
+    max = max(max, maxHere)
 
 max number of consecutive ones: max
 ```
@@ -1687,7 +1687,7 @@ getkth(int[] A, int aStart, int[] B, int bStart, int k)
         return A[aStart + k - 1]
 
     if k == 1
-        return Math.min(A[aStart], B[bStart])
+        return min(A[aStart], B[bStart])
 
 	aMid = Integer.MAX_VALUE
 	bMid = Integer.MAX_VALUE
@@ -1768,7 +1768,7 @@ i: 0 -> (1 << nums.length)
 power set: powerSet
 ```
 
-[**54. Implementing Stack using Arrays**](https://www.geeksforgeeks.org/stack-data-structure-introduction-program/)
+[**54.1. Implementing Stack using Arrays**](https://www.geeksforgeeks.org/stack-data-structure-introduction-program/)
 
 ```
 Stack
@@ -1820,7 +1820,7 @@ Stack
 }
 ```
 
-[**54. Array implementation of queue**](https://www.geeksforgeeks.org/array-implementation-of-queue-simple/)
+[**54.2. Implement Queue using Arrays**](https://www.geeksforgeeks.org/array-implementation-of-queue-simple/)
 
 ```
 Queue
@@ -1877,7 +1877,555 @@ Queue
 }
 ```
 
-[**54. Search a 2D Matrix**](https://leetcode.com/problems/search-a-2d-matrix/)
+[**55.1. Implement Stack using Queues**](https://leetcode.com/problems/implement-stack-using-queues/)
+
+```
+MyStack {
+
+    LinkedList<Integer> q1
+
+
+    push (x)
+        q1.add(x)
+        sz = q1.size
+        while sz > 1
+            q1.add(q1.remove)
+            sz--
+
+
+    pop
+        q1.remove
+
+
+    top
+        return q1.peek
+
+
+    empty
+        return q1.isEmpty
+}
+```
+
+[**55.2. Implement Queue using Stacks**](https://leetcode.com/problems/implement-queue-using-stacks/)
+
+```
+approach name: 0(1) amortised method
+
+MyQueue
+{
+    Stack<Integer> s1
+    Stack<Integer> s2
+
+
+    <- Push element x to the back of queue ->
+    push (x)
+        if s1.isEmpty
+            front = x
+
+        s1.push(x)
+
+    <- Removes the element from in front of queue ->
+    pop
+        if s2.isEmpty
+            while !s1.isEmpty
+                s2.push(s1.pop)
+
+        s2.pop
+
+
+    peek
+        if !s2.isEmpty
+            return s2.peek
+
+        return front
+
+
+    empty
+        return s1.isEmpty AND s2.isEmpty
+}
+```
+
+[**56. Valid Parentheses**](https://leetcode.com/problems/valid-parentheses/)
+
+```
+approach: stacks
+
+Stack<Character> stack
+
+for (c : s.toCharArray)
+    if c == '('
+        stack.push(')')
+
+    elif c == '{'
+        stack.push('}')
+
+    elif c == '['
+        stack.push(']')
+
+    elif stack.isEmpty OR stack.pop != c
+        return false
+
+return stack.isEmpty
+```
+
+[**57.1 Next Greater Element I**](https://leetcode.com/problems/next-greater-element-i/)
+
+```
+approach: stacks
+
+<- Map from x to next greater element of x ->
+Map<Integer, Integer> map
+Stack<Integer> stack
+
+for (num : nums)
+    while !stack.isEmpty AND stack.peek < num
+        map.put(stack.pop, num)
+
+    stack.push(num)
+
+i: 0 -> findNums.length - 1
+    findNums[i] = map.getOrDefault(findNums[i], -1)
+
+next greater element array: findNums
+```
+
+[**57.2 Next Smaller Element**](https://www.geeksforgeeks.org/next-smaller-element/)
+
+```
+approach: stacks
+
+Stack<Integer> s
+HashMap<Integer, Integer> mp
+
+
+for (num : nums)
+    while !s.isEmpty AND s.peek > num
+        mp.put(s.pop, num)
+
+    s.push(num)
+
+
+i: 0 -> findNums.length - 1
+    findNums[i] = map.getOrDefault(findNums[i], -1)
+
+
+next smaller element array: findNums
+```
+
+[**58. Sort a stack using recursion**](https://www.geeksforgeeks.org/sort-a-stack-using-recursion/)
+
+```
+sortedInsert (s, x)
+{
+    if s.isEmpty OR x > s.peek
+        s.push(x)
+        return
+
+    <- If top is greater, remove the top item and recur ->
+    temp = s.pop
+    sortedInsert(s, x)
+
+    <- Put back the top item removed earlier ->
+    s.push(temp)
+}
+
+<- Method to sort stack ->
+sortStack(s)
+{
+    if !s.isEmpty
+        <- Remove the top item ->
+        int x = s.pop()
+
+        <- Sort remaining stack ->
+        sortStack(s)
+
+        <- Push the top item back in sorted stack ->
+        sortedInsert(s, x)
+}
+```
+
+[**59. LRU Cache Implementation**](https://www.geeksforgeeks.org/lru-cache-implementation/)
+
+```
+
+LRUCache
+{
+	private Deque<Integer> doublyQueue
+	private HashSet<Integer> hashSet
+	private final int CACHE_SIZE
+
+	LRUCache (capacity)
+		CACHE_SIZE = capacity
+
+
+	refer (page)
+		if (!hashSet.contains(page))
+			if doublyQueue.size == CACHE_SIZE
+				last = doublyQueue.removeLast
+				hashSet.remove(last)
+        else
+			doublyQueue.remove(page)
+
+		doublyQueue.push(page)
+		hashSet.add(page)
+
+
+	display
+		Iterator<Integer> itr
+		while itr.hasNext
+			sout(itr.next)
+}
+```
+
+[**60. Largest Rectangle in Histogram**](https://leetcode.com/problems/largest-rectangle-in-histogram/)
+
+```
+<- idx of the first bar the left that is lower than current ->
+int[n] lessFromLeft
+
+<- idx of the first bar the right that is lower than current ->
+int [n] lessFromRight
+
+lessFromRight[n - 1] = n
+lessFromLeft[0] = -1
+
+i: 1 -> n - 1
+    p = i - 1
+
+    while p >= 0 AND height[p] >= height[i]
+        p = lessFromLeft[p]
+
+    lessFromLeft[i] = p
+
+
+i: n - 2 -> 0
+    int p = i + 1
+
+    while p < n AND height[p] >= height[i]
+        p = lessFromRight[p]
+
+    lessFromRight[i] = p
+
+
+maxArea = 0
+i: 0 -> n - 1
+    maxArea = max(maxArea, height[i] * (lessFromRight[i] - lessFromLeft[i] - 1))
+
+
+return maxArea
+```
+
+[**61. Sliding Window Maximum**](https://leetcode.com/problems/sliding-window-maximum/)
+
+```
+int[n-k+1] r
+ri = 0
+
+<- store index ->
+Deque<Integer> q
+
+i: 0 -> n - 1
+    <- remove numbers out of range k ->
+    while !q.isEmpty() AND q.peek() < i - k + 1
+        q.poll
+
+    <- remove smaller numbers in k range as they are useless ->
+    while !q.isEmpty AND a[q.peekLast()] < a[i]
+        q.pollLast
+
+    <- q contains index... r contains content ->
+    q.offer(i)
+    if i >= k - 1
+        r[ri++] = a[q.peek]
+
+
+return r
+```
+
+[**62. Min Stack**](https://leetcode.com/problems/min-stack/)
+
+```
+MinStack
+{
+	head
+
+    Node
+        val
+        min
+        next
+
+        Node (val, min, next)
+            this.val = val
+            this.min = min
+            this.next = next
+
+
+    push (x)
+        if head == null
+            head = new Node(x, x, null)
+        else
+            head = new Node(x, min(x, head.min), head)
+
+
+    pop
+        head = head.next
+
+
+    top
+        return head.val
+
+
+    getMin
+        return head.min
+}
+```
+
+[**63. Rotting Oranges**](https://leetcode.com/problems/rotting-oranges/)
+
+```
+given:
+0: an empty cell
+1: a fresh orange
+2: a rotten orange
+
+rows = grid.length
+cols = grid[0].length
+Queue<int[]> queue
+count_fresh = 0
+
+<- Put the position of all rotten oranges in queue count the number of fresh oranges ->
+i: 0  -> rows - 1
+    j: 0 -> cols - 1
+        if grid[i][j] == 2
+            queue.offer({i , j})
+
+        else if(grid[i][j] == 1) {
+            count_fresh++
+
+//if count of fresh oranges is zero --> return 0
+
+if count_fresh == 0
+    return 0
+
+count = 0
+
+dirs = [[1,0], [-1,0], [0,1], [0,-1]]
+
+<- bfs starting from initially rotten oranges ->
+while !queue.isEmpty
+    count++
+    size = queue.size
+
+    i: 0 -> size - 1
+        point = queue.poll
+
+        for (dir[] : dirs)
+            x = point[0] + dir[0]
+            y = point[1] + dir[1]
+
+            if(x < 0 || y < 0 || x >= rows || y >= cols || grid[x][y] == 0 || grid[x][y] == 2)
+                continue
+
+            <- mark the orange as rotten ->
+            grid[x][y] = 2
+            queue.offer([x , y])
+            count_fresh--
+
+
+return count_fresh == 0 ? count - 1 : -1
+```
+
+[**64.1. Z algorithm (Linear time pattern searching Algorithm)**](https://www.geeksforgeeks.org/z-algorithm-linear-time-pattern-searching-algorithm/)
+
+```
+search (text, pattern)
+    concat = pattern + "$" + text
+    l = concat.length
+
+    int[l] Z
+
+    getZarr(concat, Z)
+
+    i: 0 -> l - 1
+        if(Z[i] == pattern.length
+            sout(i - pattern.length - 1)
+
+
+getZarr (str, Z)
+    n = str.length
+    L = 0
+    R = 0
+
+    i: 1 -> n - 1
+        if i > R
+            L = R = i
+
+            while R < n && str[R - L] == str[R]
+                R++
+
+            Z[i] = R - L
+            R--
+
+        else
+            k = i - L
+
+            if Z[k] < R - i + 1
+                Z[i] = Z[k]
+            else
+                L = i
+                while R < n && str[R - L] == str[R]
+                    R++
+
+                Z[i] = R - L
+                R--
+```
+
+[**64.2. KMP Algorithm for Pattern Searching**](https://www.geeksforgeeks.org/kmp-algorithm-for-pattern-searching/)
+
+```
+KMPSearch (pat, txt)
+    int M = pat.length
+    int N = txt.length
+
+    int[M] lps
+    j = 0
+
+    computeLPSArray(pat, M, lps)
+
+    i = 0
+    while (i < N)
+        if pat[j] == txt[i]
+            j++
+            i++
+
+        if j == M
+            sout((i - j)
+            j = lps[j - 1]
+
+        elif i < N AND pat[j] != txt[i]
+            if (j != 0)
+                j = lps[j - 1]
+            else
+                i = i + 1
+
+
+computeLPSArray(pat, M, lps)
+    len = 0
+    i = 1
+    lps[0] = 0
+
+    while i < M
+        if pat[i] == pat[len]
+            len++
+            lps[i] = len
+            i++
+
+        else
+            if len != 0
+                len = lps[len - 1]
+
+            else
+                lps[i] = len
+                i++
+```
+
+[**65. Minimum characters to be added at front to make string palindrome**](https://www.geeksforgeeks.org/minimum-characters-added-front-make-string-palindrome/)
+
+```
+approach: lps array of KMP algorithm
+
+computeLPSArray (str)
+	n = str.length
+	int[n] lps
+	i = 1
+    len = 0
+
+	lps[0] = 0
+
+	while i < n
+		if str[i] == str[len]
+			len++
+			lps[i] = len
+			i++
+
+        else
+			if len != 0
+				len = lps[len - 1]
+
+			else
+				lps[i] = 0
+				i++
+
+
+	return lps
+
+
+getMinCharToAddedToMakeStringPalin (str)
+	StringBuilder s
+	s.append(str)
+
+	String rev = s.reverse.toString
+	s.reverse.append("$").append(rev)
+
+	lps = computeLPSArray(s.toString)
+
+	return str.length - lps[s.length - 1]
+```
+
+[**66. Check whether two strings are anagram of each other**](https://www.geeksforgeeks.org/check-whether-two-strings-are-anagram-of-each-other/)
+
+```
+int[256] count
+int i
+
+if str1.length != str2.length
+    return false
+
+i: 0 -> str1.length - 1
+    count[str1[i] - 'a']++
+    count[str2[i] - 'a']--
+
+i: 0 -> 256 - 1
+    if count[i] != 0
+        return false
+
+return true
+```
+
+[**67. Count and Say**](https://leetcode.com/problems/count-and-say/)
+
+```
+public String countAndSay(int n) {
+        String s = "1";
+        for(int i = 1; i < n; i++){
+            s = countIdx(s);
+        }
+        return s;
+    }
+
+    public String countIdx(String s){
+        StringBuilder sb = new StringBuilder();
+        char c = s.charAt(0);
+        int count = 1;
+        for(int i = 1; i < s.length(); i++){
+            if(s.charAt(i) == c){
+                count++;
+            }
+            else
+            {
+                sb.append(count);
+                sb.append(c);
+                c = s.charAt(i);
+                count = 1;
+            }
+        }
+        sb.append(count);
+        sb.append(c);
+        return sb.toString();
+    }
+```
+
+[**68. Search a 2D Matrix**](https://leetcode.com/problems/search-a-2d-matrix/)
 
 ```
 
