@@ -1,7 +1,5 @@
 <ol>
-<a href="https://leetcode.com/problems/sort-colors/">
-    <li><h3>Sort 012</h3></li>
-</a>
+<a href="https://leetcode.com/problems/sort-colors/"><li><h3>Sort 012</h3></li></a>
 
 ```
 i = 0
@@ -23,7 +21,7 @@ while i <= k
 
 ```
 
-<a href="https://leetcode.com/problems/missing-number/"><h1><li>Missing Number</li></h1></a>
+<a href="https://leetcode.com/problems/missing-number/"><h3><li>Missing Number</li></h3></a>
 
 ```
 xor = nums.length
