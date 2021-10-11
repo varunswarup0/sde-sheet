@@ -21,7 +21,7 @@ while i <= k
 
 ```
 
-<a href="https://leetcode.com/problems/missing-number/"><h3><li>Missing Number</li></h3></a>
+<!-- <a href="https://leetcode.com/problems/missing-number/"><h3><li>Missing Number</li></h3></a> -->
 
 ```
 xor = nums.length
