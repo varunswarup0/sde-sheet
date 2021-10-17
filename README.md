@@ -5,7 +5,7 @@
 </h4></li>
 
 ```
-Time Complexity: O(N) <br />
+Time Complexity: O(N)
 Space Complexity: O(1)
 
 i = 0
@@ -31,7 +31,7 @@ WHILE i <= k
 Missing Number
 </a></li></h4>
 
-Time Complexity: O(N)
+Time Complexity: O(N) <br />
 Space Complexity: O(1)
 
 ```
