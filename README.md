@@ -105,8 +105,8 @@ Maximum SubArray
 
 ```
 approach: Kadane's algorithm
-currentSum = -∞
-overallSum = -∞
+currentSum = -INF
+overallSum = -INF
 
 i: 0 -> n
     currentSum = (currentSum >= 0) ? currentSum + val : val
@@ -332,7 +332,7 @@ mergeSortAndCount(arr, l, r)
 
     count = 0
 
-    if (l < r)
+    if l < r
         m = (l + r) / 2
 
         count += mergeSortAndCount(arr, l, m)
@@ -350,11 +350,11 @@ Best Time to Buy and Sell Stock
 </a></li></h4>
 
 ```
-minPrice = ∞
+minPrice = INF
 maxProfit = 0
 
 i: 0 -> n - 1
-    if minPrice > prices[i]
+    IF minPrice > prices[i]
         minPrice = prices[i]
     ELIF maxProfit < prices[i] - minPrice
         maxProfit = prices[i] - minPrice
@@ -368,7 +368,7 @@ Best Time to Buy and Sell Stock
 
 ```
 
-minPrice = ∞
+minPrice = INF
 maxProfit = 0
 
 i: 0 -> n - 1
@@ -396,6 +396,11 @@ i: 0 -> n
         swap(matrix[i][j], matrix[i][n - j - 1])
 
 ```
+
+</ol>
+
+<h1>Mathematics</h1>
+<ol>
 
 <h4><li><a href="https://leetcode.com/problems/search-a-2d-matrix/">
 Search a 2D Matrix
@@ -451,6 +456,10 @@ myPow(x, n)
 
 ```
 
+</ol>
+<h1>Hashing</h1>
+<ol>
+
 <h4><li><a href="https://leetcode.com/problems/majority-element/">
 Majority Element I (more than n/2 times)
 </a></li></h4>
@@ -479,8 +488,8 @@ List<Integer> result
 
 firstSum = 0
 secondSum = 0
-firstMajor = ∞
-secondMajor = -∞
+firstMajor = INF
+secondMajor = -INF
 
 i: 0 -> n - 1
     IF nums[i] == firstMajor
@@ -762,6 +771,10 @@ longest substring length: max
 
 ```
 
+</ol>
+<h1>Linked List</h1>
+<ol>
+
 <h4><li><a href="https://leetcode.com/problems/reverse-linked-list/">
 Reverse Linked List
 </a></li></h4>
@@ -1015,6 +1028,10 @@ slow.next = null
 RETURN head
 ```
 
+</ol>
+<h1>Two Pointers</h1>
+<ol>
+
 <h4><li><a href="https://leetcode.com/problems/copy-list-with-random-pointer/">
 Clone a Linked List with random and next pointer
 </a></li></h4>
@@ -1102,6 +1119,10 @@ max = max(max, maxHere)
 max number of consecutive ones: max
 
 ```
+
+</ol>
+<h1>Greedy</h1>
+<ol>
 
 <h4><li><a href="https://www.geeksforgeeks.org/find-maximum-meetings-in-one-room/">
 Find maximum meetings in one room
@@ -1275,18 +1296,24 @@ Coin Change
 int dp[amount+1]
 
 i: 1 -> amount
-min = Integer.MAX_VALUE
+min = INF
 
     for coin: coins
         if i - coin >=0 AND dp[i - coin] != -1
             min = min(min, dp[i-coin])
 
     <- If currentAmount can not be reached, set dp[i] = -1 ->
-    dp[i] = (min == Integer.MAX_VALUE) ? -1 : 1 + min
+    dp[i] = (min == INF)
+        ? -1
+        : 1 + min
 
 minimum number of coins: dp[amount]
 
 ```
+
+</ol>
+<h1>Recursion</h1>
+<ol>
 
 <h4><li><a href="https://leetcode.com/problems/subsets/">
 Subsets
@@ -1475,6 +1502,10 @@ continue
         tempList.remove(tempList.size - 1)
 
 ```
+
+</ol>
+<h1>Recursion and Backtracking</h1>
+<ol>
 
 <h4><li><a href="https://leetcode.com/problems/n-queens/">
 N-Queens
@@ -1703,7 +1734,6 @@ Word Break
 </a></li></h4>
 
 ```
-
 given: String s, List<String> dict
 approach: dp
 
@@ -1718,8 +1748,11 @@ f[i] = true
 break
 
 is word break possible: f[s.length]
-
 ```
+
+</ol>
+<h1>Binary Search</h1>
+<ol>
 
 <h4><li><a href="https://www.geeksforgeeks.org/calculating-n-th-real-root-using-binary-search/">
 N-th root of a number
@@ -1766,8 +1799,8 @@ Find median in row wise sorted matrix
 ```
 
 approach: binary search
-max = MIN_VALUE
-min = MAX_VALUE
+max = -INF
+min = INF
 
 i:0 -> r - 1
 <- Finding the minimum element ->
@@ -1890,8 +1923,8 @@ getkth(A, aStart, B, bStart, k)
     if k == 1
         RETURN min(A[aStart], B[bStart])
 
-    aMid = Integer.MAX_VALUE
-    bMid = Integer.MAX_VALUE
+    aMid = INF
+    bMid = INF
 
     if aStart + k/2 - 1 < A.length
         aMid = A[aStart + k/2 - 1]
@@ -1949,12 +1982,15 @@ Aggressive cows
 
 ```
 
+</ol>
+<h1>Bits</h1>
+<ol>
+
 <h4><li><a href="https://leetcode.com/problems/search-a-2d-matrix/">
 Power Set
 </a></li></h4>
 
 ```
-
 approach: bit manipulation
 
 List<List<Integer>> powerSet
@@ -1972,6 +2008,10 @@ power set: powerSet
 
 ```
 
+</ol>
+<h1>Stack and Queue</h1>
+<ol>
+
 <h4><li><a href="https://www.geeksforgeeks.org/stack-data-structure-introduction-program/">
 Implementing Stack using Arrays
 </a></li></h4>
@@ -1980,7 +2020,9 @@ Implementing Stack using Arrays
 
 Stack
 {
-<- Maximum size of Stack, MAX = 1000 ->
+<- Maximum size of Stack ->
+MAX = 1000
+
 top
 a[MAX]
 
@@ -2488,6 +2530,10 @@ WHILE !queue.isEmpty
 RETURN count_fresh == 0 ? count - 1 : -1
 ```
 
+</ol>
+<h1>String</h1>
+<ol>
+
 <h4><li><a href="https://www.geeksforgeeks.org/z-algorithm-linear-time-pattern-searching-algorithm/">
 Z algorithm (Linear time pattern searching Algorithm)
 </a></li></h4>
@@ -2717,6 +2763,10 @@ i:0 -> length - 1
 RETURN 0
 ```
 
+</ol>
+<h1>Binary Tree</h1>
+<ol>
+
 <h4><li><a href="https://leetcode.com/problems/binary-tree-inorder-traversal/">
 Binary Tree Inorder Traversal
 </a></li></h4>
@@ -2844,7 +2894,7 @@ Node
 
 	Node (key)
 		data = key
-		hd = MAX_VALUE
+		hd = INF
 		left = right = null
 }
 
@@ -3209,6 +3259,10 @@ flatten (root)
 
 ```
 
+</ol>
+<h1>Binary Search Tree</h1>
+<ol>
+
 <h4><li><a href="https://leetcode.com/problems/populating-next-right-pointers-in-each-node/">
 Populating Next Right Pointers in Each Node
 </a></li></h4>
@@ -3348,7 +3402,6 @@ findPS(root, a, p, q)
 
 predecessor: p[0]
 successor: q[0]
-
 ```
 
 <h4><li><a href="">
