@@ -5,7 +5,7 @@
 </h4></li>
 
 ```
-Time Complexity: O(N)
+Time Complexity: O(N) <br />
 Space Complexity: O(1)
 
 i = 0
