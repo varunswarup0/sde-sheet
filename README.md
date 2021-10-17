@@ -5,6 +5,9 @@
 </h4></li>
 
 ```
+Time Complexity: O(N)
+Space Complexity: O(1)
+
 i = 0
 j = 0
 k = n - 1
@@ -27,6 +30,9 @@ WHILE i <= k
 <h4><li><a href="https://leetcode.com/problems/missing-number/">
 Missing Number
 </a></li></h4>
+
+Time Complexity: O(N)
+Space Complexity: O(1)
 
 ```
 xor = nums.length
