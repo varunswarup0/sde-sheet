@@ -52,7 +52,6 @@ Time Complexity: O(n) <br />
 Space Complexity: O(1)
 
 ```
-
 xor = 0
 
 i : 0 -> nums.length - 1
@@ -116,9 +115,11 @@ WHILE (j >= 0)
 Maximum SubArray
 </a></li></h4>
 
-```
+Time Complexity: O(n) <br />
+Space Complexity: O(1)
 
-<- approach: Kadane's algorithm ->
+```
+APPROACH: Kadane's algorithm
 
 currentSum = -INF
 overallSum = -INF
