@@ -136,11 +136,12 @@ maximumSum: overallSum
 Merge Overlapping Interval
 </a></li></h4>
 
-```
+Time Complexity: O(nLogn)
 
-given: Interval[n] = {startTime, endTime}
-Stack<Interval> st
-Stack<Intervals> result
+```
+given: Interval[n] = { startTime, endTime }
+st = new Stack<Interval>
+result = new Stack<Intervals>
 
 sort(intervals)
 st.push(intervals[0])
@@ -152,8 +153,9 @@ i: 1 -> n - 1
         ? currInterval.endTime = max(currInterval.endTime, intervals[i].endTime)
         : st.push(intervals[i])
 
+
 WHILE st.size != 0
-result.push(st.pop)
+    result.push(st.pop)
 
 MERGED_INTERVALS: result
 ```
@@ -162,14 +164,15 @@ MERGED_INTERVALS: result
 Detect Cycle
 </a></li></h4>
 
+Time Complexity: O(n) <br />
+Space Complexity: O(1)
+Approach: Floyd's Tortoise and Hare Algorithm
+
 ```
-
-APPROACH: Floyd's Tortoise and Hare Algorithm
-
 slow = head
 fast = head
 
-WHILE (fast != null && fast.next != null)
+WHILE fast != null AND fast.next != null
     slow = slow.next
     fast = fast.next.next
 
@@ -177,7 +180,7 @@ WHILE (fast != null && fast.next != null)
     if slow == fast
         break
 
-if (fast == null || fast.next == null)
+if fast == null AND fast.next == null
     CYCLE_STARTING_POINT: null
     RETURN
 
@@ -188,7 +191,6 @@ WHILE (slow != fast)
     fast = fast.next
 
 CYCLE_STARTING_POINT: slow
-
 ```
 
 <h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
@@ -218,43 +220,47 @@ Set Matrix Zeroes
 </a></li></h4>
 
 ```
-
 isFirstColZero = false
 isFirstRowZero = false
 
 <- check the first column ->
-i: 0 -> n - 1
+i:0 -> n - 1
     if matrix[i][0] == 0
         isFirstColZero = true
         break
 
+
 <- check the first row ->
-i: 0 -> n - 1
+i:0 -> n - 1
     if matrix[0][i] == 0
         isFirstRowZero = true
         break
 
+
 <- check except the first row and column and mark on first row and column ->
-i: 1 i -> n - 1
-    j: 1 -> m
+i:1 -> n - 1
+    j:1 -> m
         if matrix[i][j] == 0
             matrix[i][0] = matrix[0][j] = 0
 
+
 <- process except the first row and column ->
-i = 1 -> n
-    j: 1 -> m
+i:1 -> n
+    j:1 -> m
         if matrix[i][0] == 0 OR matrix[0][j] == 0
             matrix[i][j] = 0
 
+
 <- handle the first column ->
 if isFirstColZero
-    i: 0 -> n
+    i:0 -> n
         matrix[i][0] = 0
+
 
 <- handle the first row ->
 if isFirstRowZero
-i: 0 -> m
-    matrix[0][i] = 0
+    i:0 -> m
+        matrix[0][i] = 0
 
 ```
 
@@ -263,62 +269,62 @@ Pascal Triangle
 </a></li></h4>
 
 ```
-
 triangle = new List<List<Integer>>
 
-i: 0 -> n
+i:0 -> n
     List<Integer> row
 
-    j: 0 -> i
-        if j == 0 OR j == i
+    j:0 -> i
+        IF j == 0 OR j == i
             row.add(1)
-        else
+        ELSE
             upLeft = triangle.get(i - 1).get(j - 1)
             upRight = triangle.get(i - 1).get(j)
             row.add(upLeft + upRight)
 
     triangle.add(row)
 
-PASCAL_TRIANGLE: triangle
 
+PASCAL_TRIANGLE: triangle
 ```
 
 <h4><li><a href="https://leetcode.com/problems/next-permutation/">
 Next Permutation
 </a></li></h4>
 
+Time complexity : O(n) <br />
+Space complexity : O(1)
+
 ```
+GIVEN: int[] nums
 
-pivotIndex = -1
-pivot = 0
+i = nums.length - 2
 
-i: n - 1 -> 0
-    if (nums[i] < nums[i + 1])
-    pivotIndex = i
-    pivot = nums[i]
-    break
+<- Find the deaceasing element ->
+WHILE (i >= 0 AND nums[i + 1] <= nums[i])
+    i--
 
-if (pivotIndex == -1)
-    reverse(nums, 0, n)
-    RETURN
+IF (i >= 0)
+    j = nums.length - 1
 
-i: n -> 0
-    if (nums[i] > pivot)
-        swap(nums, pivotIndex, i)
-        BREAK
+    <- Find element just greater than the deaceasing element ->
+    WHILE (nums[j] <= nums[i])
+        j--
 
-CALL reverse(nums, pivotIndex + 1, n)
+    swap(nums, i, j)
 
-NEXT_PERMUTATION: nums
-
+NEXT_PERMUTATION: reverse(nums, i + 1)
 ```
 
 <h4><li><a href="https://www.geeksforgeeks.org/counting-inversions/">
 Count Inversions in an array
 </a></li></h4>
 
-```
+Time Complexity: O(nlogn) <br />
+Space Complexity: O(n) <br />
+Approach: divide and conquer
 
+```
 mergeAndCount (arr, l, m, r)
 {
     left = copyOfRange(arr, l, m + 1)
