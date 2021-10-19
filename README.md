@@ -1,13 +1,13 @@
 <ol>
 <h1>Arrays</h1>
 <li><h4>
-<a href="https://leetcode.com/problems/sort-colors/">Sort 012</a>
+<a href="https://leetcode.com/problems/sort-colors/">Sort Colors</a>
 </h4></li>
 
-```
-Time Complexity: O(N)
+Time Complexity: O(N) <br />
 Space Complexity: O(1)
 
+```
 i = 0
 j = 0
 k = n - 1
@@ -25,6 +25,7 @@ WHILE i <= k
         swap(nums, i, k)
         k--
 
+SORTED_ARRAY: nums
 ```
 
 <h4><li><a href="https://leetcode.com/problems/missing-number/">
@@ -40,13 +41,14 @@ xor = nums.length
 i: 0 -> nums.length - 1
     xor = xor ^ i ^ nums[i]
 
-missing number: xor
+MISSING_NUMBER: xor
 ```
 
-<h4><li><a href="https://www.pepcoding.com/resources/data-structures-and-algorithms-in-java-levelup/bit-manipulation/one-repeating-and-one-missing-official/ojquestion">
+<h4><li><a href="https://www.geeksforgeeks.org/find-a-repeating-and-a-missing-number/">
 Missing Number & Repeating Number
 </a></li></h4>
-
+Time Complexity: O(n)
+Space Complexity: O(1)
 ```
 
 xor = 0
@@ -58,6 +60,7 @@ i : 1 -> nums.length
     xor ^= i
 
 <- All the bits that are set in xor1 will be set in either x or y ->
+<- rsb: right most set bit ->
 rsb = xor & -xor
 
 <- Elements with rsb not set ->
@@ -74,6 +77,8 @@ i: 1 -> nums.length
     rsb & i == 0
         ? x ^= i
         : y ^= i
+
+<- x and y hold the desired output elements ->
 
 i: 0 -> n - 1
     IF nums[i] == x
@@ -95,7 +100,7 @@ i = n - 1
 j = m - 1
 k = n + m - 1
 
-WHILE (i >= 0 && j >= 0)
+WHILE i >= 0 AND j >= 0
     nums1[i] > nums2[j]
         ? nums1[k--] = nums1[i--]
         : nums1[k--] = nums2[j--]
@@ -110,7 +115,9 @@ Maximum SubArray
 </a></li></h4>
 
 ```
-approach: Kadane's algorithm
+
+<- approach: Kadane's algorithm ->
+
 currentSum = -INF
 overallSum = -INF
 
@@ -118,18 +125,17 @@ i: 0 -> n
     currentSum = (currentSum >= 0) ? currentSum + val : val
     overallSum = max(overallSum, currentSum)
 
-
 maximumSum: overallSum
 
 ```
 
-<h4><li><a href="https://www.pepcoding.com/resources/online-java-foundation/stacks-and-queues/merge-overlapping-interval-official/ojquestion">
+<h4><li><a href="https://www.geeksforgeeks.org/merging-intervals/">
 Merge Overlapping Interval
 </a></li></h4>
 
 ```
 
-given: intervals[n] = {startTime, endTime}
+given: Interval[n] = {startTime, endTime}
 Stack<Interval> st
 Stack<Intervals> result
 
@@ -143,11 +149,10 @@ i: 1 -> n - 1
         ? currInterval.endTime = max(currInterval.endTime, intervals[i].endTime)
         : st.push(intervals[i])
 
-
 WHILE st.size != 0
-    result.push(st.pop)
+result.push(st.pop)
 
-merged intervals: result
+MERGED_INTERVALS: result
 ```
 
 <h4><li><a href="https://leetcode.com/problems/linked-list-cycle-ii/">
@@ -155,9 +160,11 @@ Detect Cycle
 </a></li></h4>
 
 ```
+
 APPROACH: Floyd's Tortoise and Hare Algorithm
 
-slow = fast = head
+slow = head
+fast = head
 
 WHILE (fast != null && fast.next != null)
     slow = slow.next
@@ -178,6 +185,7 @@ WHILE (slow != fast)
     fast = fast.next
 
 CYCLE_STARTING_POINT: slow
+
 ```
 
 <h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
@@ -199,7 +207,7 @@ WHILE slow != fast
     slow = nums[slow]
     fast = nums[fast]
 
-duplicate number: slow
+DUPLICATE_NUMBER: slow
 ```
 
 <h4><li><a href="https://leetcode.com/problems/set-matrix-zeroes/">
@@ -207,6 +215,7 @@ Set Matrix Zeroes
 </a></li></h4>
 
 ```
+
 isFirstColZero = false
 isFirstRowZero = false
 
@@ -241,8 +250,8 @@ if isFirstColZero
 
 <- handle the first row ->
 if isFirstRowZero
-    i: 0 -> m
-        matrix[0][i] = 0
+i: 0 -> m
+    matrix[0][i] = 0
 
 ```
 
@@ -251,6 +260,7 @@ Pascal Triangle
 </a></li></h4>
 
 ```
+
 triangle = new List<List<Integer>>
 
 i: 0 -> n
@@ -266,8 +276,8 @@ i: 0 -> n
 
     triangle.add(row)
 
-
 PASCAL_TRIANGLE: triangle
+
 ```
 
 <h4><li><a href="https://leetcode.com/problems/next-permutation/">
@@ -281,22 +291,23 @@ pivot = 0
 
 i: n - 1 -> 0
     if (nums[i] < nums[i + 1])
-        pivotIndex = i
-        pivot = nums[i]
-        break
+    pivotIndex = i
+    pivot = nums[i]
+    break
 
 if (pivotIndex == -1)
     reverse(nums, 0, n)
-    EXIT
+    RETURN
 
 i: n -> 0
     if (nums[i] > pivot)
         swap(nums, pivotIndex, i)
-        break
+        BREAK
 
 CALL reverse(nums, pivotIndex + 1, n)
 
 NEXT_PERMUTATION: nums
+
 ```
 
 <h4><li><a href="https://www.geeksforgeeks.org/counting-inversions/">
@@ -307,7 +318,6 @@ Count Inversions in an array
 
 mergeAndCount (arr, l, m, r)
 {
-
     left = copyOfRange(arr, l, m + 1)
     right = copyOfRange(arr, m + 1, r + 1)
 
@@ -330,7 +340,7 @@ mergeAndCount (arr, l, m, r)
     WHILE j < right.length
         arr[k++] = right[j++]
 
-    number of inversions: swaps
+    RETURN swaps
 }
 
 mergeSortAndCount(arr, l, r)
@@ -345,7 +355,7 @@ mergeSortAndCount(arr, l, r)
         count += mergeSortAndCount(arr, m + 1, r)
         count += mergeAndCount(arr, l, m, r)
 
-    total number of inversions:  count
+    TOTAL_NUMBER_OF_INVERSIONS:  count
 
 }
 
@@ -356,6 +366,7 @@ Best Time to Buy and Sell Stock
 </a></li></h4>
 
 ```
+
 minPrice = INF
 maxProfit = 0
 
@@ -366,6 +377,7 @@ i: 0 -> n - 1
         maxProfit = prices[i] - minPrice
 
 max profit : maxProfit
+
 ```
 
 <h4><li><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/">
@@ -378,10 +390,12 @@ minPrice = INF
 maxProfit = 0
 
 i: 0 -> n - 1
-if (minPrice > prices[i]) minPrice = prices[i]
-else if (maxProfit < prices[i]-minPrice) maxProfit = prices[i] - minPrice
+    IF minPrice > prices[i]
+        minPrice = prices[i]
+    ELIF maxProfit < prices[i]-minPrice
+        maxProfit = prices[i] - minPrice
 
-max profit : maxProfit
+MAX_PROFIT : maxProfit
 
 ```
 
@@ -432,6 +446,7 @@ WHILE start <= end
         RETURN true
 
 RETURN false
+
 ```
 
 <h4><li><a href="https://leetcode.com/problems/search-a-2d-matrix/">
@@ -439,6 +454,7 @@ Search a 2D Matrix
 </a></li></h4>
 
 ```
+
 myPow(x, n)
 {
     IF n < 0
@@ -458,6 +474,7 @@ myPow(x, n)
 
     ELSE
         RETURN x * myPow(myPow(x, n/2), 2)
+
 }
 
 ```
@@ -481,7 +498,8 @@ i:0 -> n - 1
 
     count += (nums[i] == candidate) ? 1 : -1
 
-majority element: candidate
+MAJORITY_ELEMENT: candidate
+
 ```
 
 <h4><li><a href="https://leetcode.com/problems/majority-element-ii/">
@@ -531,7 +549,8 @@ IF firstSum > n/3
 IF secondSum > n/3
     result.add(secondMajor)
 
-majority element: result
+MAJORITY_ELEMENT: result
+
 ```
 
 <h4><li><a href="https://leetcode.com/problems/unique-paths/">
@@ -544,20 +563,19 @@ dp[m][n]
 
 i: m - 1 -> 0
     j: n - 1 -> 0
-        if (i == m - 1 AND j == n - 1)
+        IF i == m - 1 AND j == n - 1
             dp[i][j] = 1
 
-        else if (i == m - 1)
+        ELIF i == m - 1
             dp[i][j] = dp[i][j + 1]
 
-        else if (j == n - 1)
+        ELIF j == n - 1
             dp[i][j] = dp[i + 1][j]
 
-        else
+        ELSE
             dp[i][j] = dp[i + 1][j] + dp[i][j + 1]
 
-
-number of unique paths: dp[0][0]
+NUMBER_OF_UNIQUE_PATHS: dp[0][0]
 ```
 
 <h4><li><a href="https://leetcode.com/problems/reverse-pairs/">
@@ -567,17 +585,19 @@ Reverse Pairs
 ```
 
 int ret
+
 reversePairs (nums)
+{
     ret = 0
     mergeSort(nums, 0, nums.length-1)
     RETURN ret
+}
 
-
-void mergeSort(int[] nums, int left, int right) {
+mergeSort(nums, left, right) {
     if right <= left
         RETURN
 
-    int middle = left + (right - left)/2
+    middle = left + (right - left)/2
     mergeSort(nums, left, middle)
     mergeSort(nums,middle+1, right)
 
@@ -611,6 +631,7 @@ void mergeSort(int[] nums, int left, int right) {
 
     i: 0 -> temp.length - 1
         nums[left + i] = temp[i]
+
 ```
 
 <h4><li><a href="https://leetcode.com/problems/two-sum/">
@@ -618,18 +639,21 @@ Two Sum
 </a></li></h4>
 
 ```
+
 result = new int[2]
 
 map = new HashMap<Integer, Integer>
+
 i: 0 -> n - 1
-    if map.containsKey(target - nums[i])
-        result[1] = i
-        result[0] = map.get(target - nums[i])
-        RETURN result
+if map.containsKey(target - nums[i])
+    result[1] = i
+    result[0] = map.get(target - nums[i])
+    RETURN result
 
     map.put(nums[i], i)
 
 RETURN result
+
 ```
 
 <h4><li><a href="https://leetcode.com/problems/3sum/">
@@ -637,8 +661,8 @@ RETURN result
 </a></li></h4>
 
 ```
-given: int[] nums
 
+given: int[] nums
 
 Arrays.sort(nums)
 res = new List<List<Integer>>
@@ -669,6 +693,7 @@ i: 0 -> (n - 3)
                 hi--
 
 RETURN res
+
 ```
 
 <h4><li><a href="https://leetcode.com/problems/4sum/">
@@ -700,8 +725,7 @@ for (n : num)
 
         res = max(res, length)
 
-
-longest consecutive sequence length: res
+LONGEST_CONSECUTIVE_SEQUENCE_LENGTH: res
 ```
 
 <h4><li><a href="https://leetcode.com/problems/subarray-sum-equals-k/">
@@ -709,19 +733,20 @@ Subarray Sum Equals K
 </a></li></h4>
 
 ```
+
 sum = 0
 result = 0
 Map<Integer, Integer> preSum
 preSum.put(0, 1)
 
 i: 0 -> n - 1
-sum += nums[i]
-if (preSum.containsKey(sum - k))
-result += preSum.get(sum - k)
+    sum += nums[i]
+    if (preSum.containsKey(sum - k))
+        result += preSum.get(sum - k)
 
     preSum.put(sum, preSum.getOrDefault(sum, 0) + 1)
 
-number of subarrays where sum equals k: result
+NUMBER_OF_SUBARRAYS_WHERE_SUM_EQUALS_K: result
 ```
 
 <h4><li><a href="https://www.geeksforgeeks.org/count-number-subarrays-given-xor/">
@@ -738,19 +763,19 @@ HashMap<Integer, Integer> mp
 xorArr[0] = arr[0]
 
 i: 1 -> n - 1
-xorArr[i] = xorArr[i - 1] ^ arr[i]
+    xorArr[i] = xorArr[i - 1] ^ arr[i]
 
 i: 0 -> n - 1
-tmp = m ^ xorArr[i]
+    tmp = m ^ xorArr[i]
 
     ans = ans + (mp.containsKey(tmp) == false ? 0 : ((long)mp.get(tmp)))
 
-    if (xorArr[i] == m)
+    IF xorArr[i] == m
         ans++
 
-    if (mp.containsKey(xorArr[i]))
+    IF mp.containsKey(xorArr[i])
         mp.put(xorArr[i], mp.get(xorArr[i]) + 1)
-    else
+    ELSE
         mp.put(xorArr[i], 1)
 
 number of subarrays having a given XOR: ans
@@ -767,14 +792,13 @@ HashMap<Character, Integer> map
 max = 0
 j = 0
 i: 0 -> n - 1
-if map.containsKey(s[i])
-j = max(j, map.get(s[i])+1)
+    if map.containsKey(s[i])
+    j = max(j, map.get(s[i])+1)
 
     map.put(s[i], i)
     max = max(max, i - j + 1)
 
-longest substring length: max
-
+LONGEST_SUBSTRING_LENGTH: max
 ```
 
 </ol>
@@ -786,16 +810,14 @@ Reverse Linked List
 </a></li></h4>
 
 ```
-
 newHead = null
 WHILE (head != null)
-next = head.next
-head.next = newHead
-newHead = head
-head = next
+    next = head.next
+    head.next = newHead
+    newHead = head
+    head = next
 
-new head: newHead
-
+NEW_HEAD: newHead
 ```
 
 <h4><li><a href="https://leetcode.com/problems/middle-of-the-linked-list/">
@@ -803,16 +825,14 @@ Middle of the Linked List
 </a></li></h4>
 
 ```
-
 slow = head
 fast = head
 
-WHILE (fast != null && fast.next != null)
-slow = slow.next
-fast = fast.next.next
+WHILE fast != null AND fast.next != null
+    slow = slow.next
+    fast = fast.next.next
 
-middle: slow
-
+MIDDLE: slow
 ```
 
 <h4><li><a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/">
@@ -834,6 +854,7 @@ WHILE fast != null
 
 slow.next = slow.next.next
 new head: start.next
+
 ```
 
 <h4><li><a href="https://leetcode.com/problems/delete-node-in-a-linked-list/">
@@ -848,7 +869,7 @@ node.next = node.next.next
 ```
 
 <h4><li><a href="https://leetcode.com/problems/add-two-numbers/">
-FAdd Two Numbers
+Add Two Numbers
 </a></li></h4>
 
 ```
@@ -874,8 +895,7 @@ WHILE l1 != null OR l2 != null
 if carry > 0
     curr.next = new ListNode(carry)
 
-head of answer linked list: dummy.next
-
+NEW_HEAD: dummy.next
 ```
 
 <h4><li><a href="https://leetcode.com/problems/intersection-of-two-linked-lists/">
@@ -883,18 +903,19 @@ Intersection of Two Linked Lists
 </a></li></h4>
 
 ```
-
 approach: iterative
-space complexity: O(1)
+Time Complexity: O(n)
+Space Complexity: O(1)
 
 a = headA
 b = headB
 
-WHILE( a != b)
+WHILE a != b
     a = a == null ? headB : a.next
     b = b == null ? headA : b.next
 
 intersection point: a
+
 ```
 
 <h4><li><a href="https://leetcode.com/problems/reverse-nodes-in-k-group/">
@@ -902,6 +923,7 @@ Reverse Nodes in k-Group
 </a></li></h4>
 
 ```
+
 if head == null OR k == 1
     RETURN head
 
@@ -917,7 +939,6 @@ count = 0
 WHILE cur.next != null
     cur = cur.next
     count++
-
 
 WHILE count >= k
     <- Point to first node ->
@@ -935,8 +956,7 @@ WHILE count >= k
     pre = cur
     count = count - k
 
-
-RETURN dummy.next
+NEW_HEAD: dummy.next
 ```
 
 <h4><li><a href="https://leetcode.com/problems/palindrome-linked-list/">
@@ -944,7 +964,6 @@ Palindrome Linked List
 </a></li></h4>
 
 ```
-
 slow = head
 
 isPalindrome = true
@@ -966,8 +985,7 @@ i = stack.pop
 
     head = head.next
 
-palindrome: isPalindrome
-
+PALINDROME: isPalindrome
 ```
 
 <h4><li><a href="https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/">
@@ -977,14 +995,15 @@ Flatten a Multilevel Doubly Linked List
 ```
 
 if head == null
-RETURN head
+    RETURN head
 
 p = head
+
 WHILE p != null
-<- CASE 1: No child ->
-if p.child == null
-p = p.next
-continue
+    <- CASE 1: No child ->
+    if p.child == null
+        p = p.next
+        continue
 
     <- CASE 2: Yes child, find tail ->
     Node temp = p.child
@@ -1002,7 +1021,6 @@ continue
     p.child = null
 
 RETURN head
-
 ```
 
 <h4><li><a href="https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/">
@@ -1010,6 +1028,7 @@ Flatten a Multilevel Doubly Linked List
 </a></li></h4>
 
 ```
+
 if head == null
     RETURN null
 
@@ -1024,14 +1043,14 @@ WHILE fast.next != null
 
 <- Put slow.next at the start ->
 i: size - (k % size) -> 2
-    slow = slow.next
+slow = slow.next
 
 <- Do the rotation ->
 fast.next = head
 head = slow.next
 slow.next = null
 
-RETURN head
+NEW_HEAD: head
 ```
 
 </ol>
@@ -1048,15 +1067,15 @@ HashMap<Node, Node> map
 pointer = head
 
 WHILE pointer != null
-map.put(pointer, new Node(pointer.val))
-pointer = pointer.next
+    map.put(pointer, new Node(pointer.val))
+    pointer = pointer.next
 
 pointer = head
 
 WHILE pointer != null
-map.get(pointer).next = map.get(pointer.next)
-map.get(pointer).random = map.get(pointer.random)
-pointer = pointer.next
+    map.get(pointer).next = map.get(pointer.next)
+    map.get(pointer).random = map.get(pointer.random)
+    pointer = pointer.next
 
 head: map.get(head)
 
@@ -1077,8 +1096,8 @@ rightMaxHeight = height[right]
 area = 0
 
 WHILE left < right
-leftMaxHeight = max(leftMaxHeight, height[left])
-rightMaxHeight = max(rightMaxHeight, height[right])
+    leftMaxHeight = max(leftMaxHeight, height[left])
+    rightMaxHeight = max(rightMaxHeight, height[right])
 
     if leftMaxHeight < rightMaxHeight
         area += leftMaxHeight - height[left]
@@ -1101,12 +1120,11 @@ Remove Duplicate from Sorted array
 count = 0
 
 i: 1 -> n - 1
-A[i] == A[i - 1]
-? count++
-: A[i - count] = A[i]
+    A[i] == A[i - 1]
+        ? count++
+        : A[i - count] = A[i]
 
-number of unique elements: n - count
-
+NUMBER_OF_UNIQUE_ELEMENTS: n - count
 ```
 
 <h4><li><a href="https://leetcode.com/problems/max-consecutive-ones/">
@@ -1114,7 +1132,6 @@ Max Consecutive Ones
 </a></li></h4>
 
 ```
-
 maxHere = 0
 max = 0
 
@@ -1122,8 +1139,7 @@ for (n: nums)
 maxHere = (n == 0) ? 0 : maxHere + 1
 max = max(max, maxHere)
 
-max number of consecutive ones: max
-
+MAX_NUMBER_OF_CONSECUTIVE_ONES: max
 ```
 
 </ol>
@@ -1135,11 +1151,10 @@ Find maximum meetings in one room
 </a></li></h4>
 
 ```
-
 given: meetings[] = {startTime, endTime, position}
 approach: greedy
 
-ArrayList<Integer> result
+result = new ArrayList<Integer>
 
 timeLimit = 0
 
@@ -1161,8 +1176,7 @@ if meetings[i].startTime > timeLimit
         <- Update time limit ->
         timeLimit = al[i].endTime
 
-maximum number of meetings sequence: result
-
+MAXIMUM_NUMBER_OF_MEETINGS_SEQUENCE: result
 ```
 
 <h4><li><a href="https://www.geeksforgeeks.org/activity-selection-problem-greedy-algo-1/">
@@ -1171,7 +1185,7 @@ Activity Selection Problem
 
 ```
 
-given: activity[] = {start, finish}
+GIVEN: activity[] = {start, finish}
 
 ArrayList<Activity> res
 
@@ -1195,7 +1209,6 @@ Minimum Number of Platforms Required for a Railway/Bus Station
 </a></li></h4>
 
 ```
-
 Arrays.sort(arr)
 Arrays.sort(dep)
 
@@ -1277,12 +1290,12 @@ for i : items
     curWt = i.wt
     curVal = i.val
 
-    if capacity - curWt >= 0
+    IF capacity - curWt >= 0
         <- Can be picked whole ->
         capacity -= curWt
         totalValue += curVal
 
-    else
+    ELSE
         <- Can't be picked whole ->
         fraction = capacity / curWt
         capacity -= (curWt * fraction))
@@ -1304,7 +1317,7 @@ int dp[amount+1]
 i: 1 -> amount
 min = INF
 
-    for coin: coins
+    FOR coin: coins
         if i - coin >=0 AND dp[i - coin] != -1
             min = min(min, dp[i-coin])
 
@@ -1326,6 +1339,7 @@ Subsets
 </a></li></h4>
 
 ```
+
 subsets (nums)
 sort(nums)
 
@@ -1377,26 +1391,29 @@ Find the Duplicate Number
 [**41.3 Combination Sum**](https://leetcode.com/problems/combination-sum/)
 
 ```
-
 combinationSum (nums, target)
-List<List<Integer>> list
-backtrack(list, new ArrayList, nums, target, 0)
-RETURN list
+{
+    List<List<Integer>> list
+    backtrack(list, new ArrayList, nums, target, 0)
+    RETURN list
+}
+
 
 backtrack (list, tempList, nums, remain, start)
-if remain < 0
-RETURN
+{
+    IF remain < 0
+       RETURN
 
     ELIF remain == 0
         list.add(tempList)
 
-    else
+    ELSE
         i: start -> nums.length - 1
             tempList.add(nums[i])
             <- We can reuse same elements hence i and not i + 1 ->
             backtrack(list, tempList, nums, remain - nums[i], i)
             tempList.remove(tempList.size - 1)
-
+}
 ```
 
 <h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
@@ -1408,28 +1425,31 @@ Find the Duplicate Number
 ```
 
 combinationSum2 (nums, target)
+{
     List<List<Integer>> list
     sort(nums)
     backtrack(list, new ArrayList, nums, target, 0)
     RETURN list
+}
 
 backtrack (list, tempList, nums, remain, start)
-    if remain < 0
+{
+    IF remain < 0
         RETURN
 
     ELIF remain == 0
         list.add(tempList)
 
-    else
+    ELSE
         i: start -> nums.length - 1
             <- skip duplicates ->
-            if i > start AND nums[i] == nums[i-1]
+            IF i > start AND nums[i] == nums[i-1]
                 continue
 
             tempList.add(nums[i])
             backtrack(list, tempList, nums, remain - nums[i], i + 1)
             tempList.remove(tempList.size - 1)
-
+}
 ```
 
 <h4><li><a href="https://leetcode.com/problems/palindrome-partitioning/">
@@ -1439,20 +1459,24 @@ Palindrome Partitioning
 ```
 
 partition (s)
+{
     List<List<String>> list
     backtrack(list, new ArrayList, s, 0)
     RETURN list
+}
 
-backtrack(list, tempList, s, start){
-    if start == s.length
+backtrack (list, tempList, s, start)
+{
+    IF start == s.length
         list.add(tempList)
 
-    else
+    ELSE
         i: start -> s.length - 1
-            if isPalindrome(s, start, i)
+            IF isPalindrome(s, start, i)
                 tempList.add(s.substring(start, i + 1))
                 backtrack(list, tempList, s, i + 1)
                 tempList.remove(tempList.size - 1)
+}
 
 ```
 
@@ -1467,18 +1491,18 @@ List<Integer> num
 fact = 1
 
 i: 1 i -> n
-fact \*= i
-num.add(i)
+    fact *= i
+    num.add(i)
 
 l = k - 1
 
 i: 0 -> n -1
-fact /= n - i
-index = l / fact
-sb.append(num.remove(index))
-l -= index \* fact
+    fact /= n - i
+    index = l / fact
+    sb.append(num.remove(index))
+    l -= index * fact
 
-k-th permutation sequence: sb.toString
+KTH_PERMUTATION_SEQUENCE: sb.toString
 
 ```
 
@@ -1489,24 +1513,27 @@ Permutations (no duplicates
 ```
 
 permute (nums)
-List<List<Integer>> list
-backtrack(list, new ArrayList, nums)
-RETURN list
+{
+    List<List<Integer>> list
+    backtrack(list, new ArrayList, nums)
+    RETURN list
+}
 
 backtrack (list, tempList, nums)
-if tempList.size == nums.length
-list.add(tempList)
+{
+    if tempList.size == nums.length
+       list.add(tempList)
 
-else
-i: 0 -> nums.length - 1
-<- If element already exists, skip ->
-if tempList.contains(nums[i])
-continue
+    else
+        i: 0 -> nums.length - 1
+            <- If element already exists, skip ->
+            if tempList.contains(nums[i])
+                continue
 
-        tempList.add(nums[i])
-        backtrack(list, tempList, nums)
-        tempList.remove(tempList.size - 1)
-
+            tempList.add(nums[i])
+            backtrack(list, tempList, nums)
+            tempList.remove(tempList.size - 1)
+}
 ```
 
 </ol>
@@ -1519,7 +1546,7 @@ N-Queens
 
 ```
 
-approach: bit manipulation
+APPROACH: bit manipulation
 
 char[][] board
 columnBit = 0
@@ -1528,13 +1555,15 @@ reverseDiagonal = 0
 List<List<String>> res
 
 operateOnBoard (operation, row, col)
-board[row][col] = operation == "insert" ? 'Q' : '.'
-columnBit ^= 1 << col
-normalDiagonal ^= 1 << row + col
-reverseDiagonal ^= 1 << row - col + board.length - 1
+{
+    board[row][col] = operation == "insert" ? 'Q' : '.'
+    columnBit ^= 1 << col
+    normalDiagonal ^= 1 << row + col
+    reverseDiagonal ^= 1 << row - col + board.length - 1
+}
 
 checkSquare (row, col)
-
+{
     if columnBit & (1 << col) != 0
         RETURN false
 
@@ -1545,8 +1574,10 @@ checkSquare (row, col)
         RETURN false
 
     RETURN true
+}
 
 solveNQueens (n)
+{
     board char[n][n]
 
     for row : board
@@ -1556,22 +1587,21 @@ solveNQueens (n)
     RETURN res
 
 solve (row)
+{
     if row == board.length
-        List<String> path
+    List<String> path
 
         i: 0 -> board.length - 1
             path.add(new String(board[i]))
 
         res.add(path)
 
-
-
     col: 0 -> board.length - 1
         if checkSquare(row, col)
             operateOnBoard("insert", row, col)
             solve(row + 1)
             operateOnBoard("remove", row, col)
-
+}
 ```
 
 <h4><li><a href="https://leetcode.com/problems/sudoku-solver/">
@@ -1587,45 +1617,54 @@ cols int[9]
 grid int[3][3]
 
 operateOnSudoku (operation, i, j, num)
-arr[i][j] = (operation == "insert") ? num : 0
-rows[i] ^= (1 << num)
-cols[j] ^= (1 << num)
-grid[i / 3][j / 3] ^= (1 << num)
+{
+    arr[i][j] = (operation == "insert") ? num : 0
+    rows[i] ^= (1 << num)
+    cols[j] ^= (1 << num)
+    grid[i / 3][j / 3] ^= (1 << num)
+}
 
 checkBox (i, j, num)
-if rows[i] & (1 << num) != 0
-RETURN false
-
-    if cols[j] & (1 << num) != 0
+{
+    IF rows[i] & (1 << num) != 0
         RETURN false
 
-    if grid[i / 3][j / 3] & (1 << num) != 0
+    IF cols[j] & (1 << num) != 0
         RETURN false
 
-    RETURN true
+    IF grid[i / 3][j / 3] & (1 << num) != 0
+        RETURN false
+
+    RETURN TRUE
+}
 
 solveSudoku (i, j)
-if i == arr.length
-display arr
+{
+    IF i == arr.length
+        display(arr)
 
-    if arr[i][j] != 0
+    IF arr[i][j] != 0
         solveSudoku(j < 8 ? i : i + 1, j < 8 ? j + 1 : 0)
 
-    else
+    ELSE
         num: 1 -> 9
             if checkBox(i, j, num)
                 operateOnSudoku("insert", i, j, num)
                 solveSudoku(j < 8 ? i : i + 1, j < 8 ? j + 1 : 0)
                 operateOnSudoku("remove", i, j, num)
+}
 
-main
-i: 0 -> 8
-j: 0 -> 8
-rows[i] |= (1 << digit)
-cols[j] |= (1 << digit)
-grid[i / 3][j / 3] |= (1 << digit)
+main ()
+{
+    i: 0 -> 8
+        j: 0 -> 8
+            rows[i] |= (1 << digit)
+            cols[j] |= (1 << digit)
+            grid[i / 3][j / 3] |= (1 << digit)
+
 
     solveSudoku(0, 0)
+}
 
 ```
 
@@ -1688,19 +1727,22 @@ isSafe(maze, x, y)
 RETURN (x >= 0 && x < N && y >= 0 && y < N && maze[x][y] == 1)
 
 solveMaze (maze)
-sol int[N][n]
+{
+    sol int[N][n]
 
     if NOT solveMazeUtil(maze, 0, 0, sol)
         RETURN false
 
     printSolution(sol)
     RETURN true
+}
+
 
 solveMazeUtil(maze, x, y, sol)
 <- If (x, y is goal) RETURN true ->
 if x == N - 1 AND y == N - 1 AND maze[x][y] == 1
-sol[x][y] = 1
-RETURN true
+    sol[x][y] = 1
+    RETURN true
 
     <- Check if maze[x][y] is valid ->
     if isSafe(maze, x, y)
@@ -1740,20 +1782,20 @@ Word Break
 </a></li></h4>
 
 ```
-given: String s, List<String> dict
-approach: dp
+GIVEN: String s, List<String> dict
+APPROACH: dp
 
 boolean f[s.length + 1]
 
 f[0] = true
 
 i: 1 -> s.length
-j: 0 -> i - 1
-if f[j] AND dict.contains(s.substring(j, i))
-f[i] = true
-break
+    j: 0 -> i - 1
+        if f[j] AND dict.contains(s.substring(j, i))
+            f[i] = true
+            break
 
-is word break possible: f[s.length]
+IS_WORD_BREAK_POSSIBLE: f[s.length]
 ```
 
 </ol>
@@ -1765,19 +1807,20 @@ N-th root of a number
 </a></li></h4>
 
 ```
-given: x, n
-approach: binary search
+
+GIVEN: x, n
+APPROACH: binary search
 
 low = 0
 high = 0
 
 if x >= 0 AND x <= 1
-low = x
-high = 1
+    low = x
+    high = 1
 
 else
-low = 1
-high = x
+    low = 1
+    high = x
 
 <- used for taking approximations of the answer ->
 epsilon = 0.00000001
@@ -1794,8 +1837,7 @@ WHILE abs((pow(guess, n)) - x) >= epsilon
 
     guess = (low + high) / 2
 
-n-th root of a number: guess
-
+Nth_ROOT_OF_A_NUMBER: guess
 ```
 
 <h4><li><a href="https://www.geeksforgeeks.org/find-median-row-wise-sorted-matrix/">
@@ -1803,21 +1845,21 @@ Find median in row wise sorted matrix
 </a></li></h4>
 
 ```
+APPROACH: binary search
 
-approach: binary search
 max = -INF
 min = INF
 
 i:0 -> r - 1
-<- Finding the minimum element ->
-if m[i][0] < min
-min = m[i][0]
+    <- Finding the minimum element ->
+    if m[i][0] < min
+        min = m[i][0]
 
     <- Finding the maximum element ->
-    if(m[i][c-1] > max)
+    if m[i][c-1] > max
         max = m[i][c-1]
 
-desired = (r \* c + 1) / 2
+desired = (r * c + 1) / 2
 
 WHILE min < max
 
@@ -1847,8 +1889,7 @@ WHILE min < max
     else
         max = mid
 
-median: min
-
+MEDIAN: min
 ```
 
 <h4><li><a href="https://leetcode.com/problems/single-element-in-a-sorted-array/">
@@ -1856,23 +1897,21 @@ Single Element in a Sorted Array
 </a></li></h4>
 
 ```
-
-approach: binary search
+APPROACH: binary search
 
 lo = 0
 hi = nums.length - 1
 
 WHILE lo < hi
-mid = (lo + hi) / 2
-temp = mid ^ 1
+    mid = (lo + hi) / 2
+    temp = mid ^ 1
 
     if nums[mid] == nums[temp]
         lo = mid + 1
     else
         hi = mid
 
-search index: lo
-
+SEARCH_INDEX: lo
 ```
 
 <h4><li><a href="https://leetcode.com/problems/search-in-rotated-sorted-array/">
@@ -1880,13 +1919,12 @@ Search in Rotated Sorted Array
 </a></li></h4>
 
 ```
-approach: binary search
+APPROACH: binary search
 
 lo = 0
 hi = n - 1
 
 WHILE lo < hi
-
     mid = (lo + hi) / 2
 
     <- target and mid are on the same side ->
@@ -1905,7 +1943,7 @@ WHILE lo < hi
     else
         lo = mid + 1
 
-search index: nums[lo] == target ? lo : -1
+SEARCH_INDEX: nums[lo] == target ? lo : -1
 ```
 
 <h4><li><a href="https://leetcode.com/problems/median-of-two-sorted-arrays/">
@@ -1914,9 +1952,12 @@ Median of Two Sorted Arrays
 
 ```
 findMedianSortedArrays (A, B)
-    m = A.length, n = B.length
+    m = A.length
+    n = B.length
+
     l = (m + n + 1) / 2
     r = (m + n + 2) / 2
+
     RETURN (getkth(A, 0, B, 0, l) + getkth(A, 0, B, 0, r)) / 2.0
 
 getkth(A, aStart, B, bStart, k)
@@ -1945,6 +1986,7 @@ getkth(A, aStart, B, bStart, k)
     <- Check: bRight + aLeft ->
     else
         RETURN getkth(A, aStart, B, bStart + k/2, k - k/2)
+
 ```
 
 <h4><li><a href="https://www.geeksforgeeks.org/allocate-minimum-number-pages/">
@@ -1952,10 +1994,12 @@ FindAllocate minimum number of pages
 </a></li></h4>
 
 ```
-GIVEN & CALL:
+
+GIVEN:
 arr1[5] = {2, 3, 6, 7, 9}
 arr2[4] = {1, 4, 8, 10}
-kth(arr1, arr2, arr1 + 5, arr2 + 4, k - 1)
+
+CALL: kth(arr1, arr2, arr1 + 5, arr2 + 4, k - 1)
 
 kth (arr1, arr2, end1, end2, k)
     IF arr1 == end1
@@ -1978,6 +2022,7 @@ kth (arr1, arr2, end1, end2, k)
     		RETURN kth(arr1, arr2, arr1 + mid1, end2, k)
     	ELSE
     		RETURN kth(arr1, arr2, end1, arr2 + mid2, k)
+
 ```
 
 <h4><li><a href="https://www.spoj.com/problems/AGGRCOW/">
@@ -1997,6 +2042,7 @@ Power Set
 </a></li></h4>
 
 ```
+
 approach: bit manipulation
 
 List<List<Integer>> powerSet
@@ -2081,10 +2127,11 @@ Implement Queue using Arrays
 </a></li></h4>
 
 ```
+
 Queue
 {
-    front, rear, capacity
-    int queue[]
+front, rear, capacity
+int queue[]
 
     Queue (c)
     	front = rear = 0
@@ -2142,6 +2189,7 @@ Implement Stack using Queues
 </a></li></h4>
 
 ```
+
 MyStack {
 
     LinkedList<Integer> q1
@@ -2224,8 +2272,8 @@ approach: stacks
 Stack<Character> stack
 
 FOR (c : s.toCharArray)
-    IF c == '('
-    stack.push(')')
+IF c == '('
+stack.push(')')
 
     ELIF c == '{'
         stack.push('}')
@@ -2245,6 +2293,7 @@ Next Greater Element I
 </a></li></h4>
 
 ```
+
 approach: stacks
 
 <- Map from x to next greater element of x ->
@@ -2252,14 +2301,15 @@ Map<Integer, Integer> map
 Stack<Integer> stack
 
 FOR (num : nums)
-    WHILE !stack.isEmpty AND stack.peek < num
-        map.put(stack.pop, num)
-    stack.push(num)
+WHILE !stack.isEmpty AND stack.peek < num
+map.put(stack.pop, num)
+stack.push(num)
 
 i: 0 -> findNums.length - 1
-    findNums[i] = map.getOrDefault(findNums[i], -1)
+findNums[i] = map.getOrDefault(findNums[i], -1)
 
 next greater element array: findNums
+
 ```
 
 <h4><li><a href="https://www.geeksforgeeks.org/next-smaller-element/">
@@ -2267,6 +2317,7 @@ Next Smaller Element
 </a></li></h4>
 
 ```
+
 approach: stacks
 
 Stack<Integer> s
@@ -2279,9 +2330,10 @@ HashMap<Integer, Integer> mp
     s.push(num)
 
 i: 0 -> findNums.length - 1
-    findNums[i] = map.getOrDefault(findNums[i], -1)
+findNums[i] = map.getOrDefault(findNums[i], -1)
 
 next smaller element array: findNums
+
 ```
 
 <h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
@@ -2294,9 +2346,9 @@ Find the Duplicate Number
 
 sortedInsert (s, x)
 {
-    if s.isEmpty OR x > s.peek
-        s.push(x)
-        RETURN
+if s.isEmpty OR x > s.peek
+s.push(x)
+RETURN
 
     <- If top is greater, remove the top item and recur ->
     temp = s.pop
@@ -2304,21 +2356,24 @@ sortedInsert (s, x)
 
     <- Put back the top item removed earlier ->
     s.push(temp)
+
 }
 
 <- Method to sort stack ->
 sortStack(s)
 {
-    if !s.isEmpty
-    <- Remove the top item ->
-        int x = s.pop
+if !s.isEmpty
+<- Remove the top item ->
+int x = s.pop
 
         <- Sort remaining stack ->
         sortStack(s)
 
         <- Push the top item back in sorted stack ->
         sortedInsert(s, x)
+
 }
+
 ```
 
 <h4><li><a href="https://www.geeksforgeeks.org/lru-cache-implementation/">
@@ -2329,9 +2384,9 @@ LRU Cache Implementation
 
 LRUCache
 {
-    Deque<Integer> doublyQueue
-    HashSet<Integer> hashSet
-    int CACHE_SIZE
+Deque<Integer> doublyQueue
+HashSet<Integer> hashSet
+int CACHE_SIZE
 
     LRUCache (capacity)
     	CACHE_SIZE = capacity
@@ -2353,7 +2408,9 @@ LRUCache
     	Iterator<Integer> itr
     	WHILE itr.hasNext
     		sout(itr.next)
+
 }
+
 ```
 
 <h4><li><a href="https://leetcode.com/problems/largest-rectangle-in-histogram/">
@@ -2372,25 +2429,26 @@ lessFromRight[n - 1] = n
 lessFromLeft[0] = -1
 
 i: 1 -> n - 1
-    p = i - 1
-    WHILE p >= 0 AND height[p] >= height[i]
-        p = lessFromLeft[p]
+p = i - 1
+WHILE p >= 0 AND height[p] >= height[i]
+p = lessFromLeft[p]
 
     lessFromLeft[i] = p
 
 i: n - 2 -> 0
-    p = i + 1
-    WHILE p < n AND height[p] >= height[i]
-        p = lessFromRight[p]
+p = i + 1
+WHILE p < n AND height[p] >= height[i]
+p = lessFromRight[p]
 
     lessFromRight[i] = p
 
 maxArea = 0
 
 i: 0 -> n - 1
-    maxArea = max(maxArea, height[i] \* (lessFromRight[i] - lessFromLeft[i] - 1))
+maxArea = max(maxArea, height[i] \* (lessFromRight[i] - lessFromLeft[i] - 1))
 
 RETURN maxArea
+
 ```
 
 <h4><li><a href="https://leetcode.com/problems/sliding-window-maximum/">
@@ -2398,10 +2456,11 @@ Sliding Window Maximum
 </a></li></h4>
 
 ```
+
 given: int[] a, int k
 
 if a == null OR k <= 0
-    RETURN new int[0]
+RETURN new int[0]
 
 n = a.length
 int[n - k + 1] r
@@ -2411,9 +2470,9 @@ ri = 0
 Deque<Integer> q
 
 i: 0 -> n - 1
-    <- remove numbers out of range k ->
-    WHILE !q.isEmpty AND q.peek < i - k + 1
-        q.poll
+<- remove numbers out of range k ->
+WHILE !q.isEmpty AND q.peek < i - k + 1
+q.poll
 
             <- remove smaller numbers in k range as they are useless ->
             WHILE !q.isEmpty AND a[q.peekLast] < a[i]
@@ -2424,8 +2483,8 @@ i: 0 -> n - 1
             if i >= k - 1
                 r[ri++] = a[q.peek]
 
-
 RETURN r
+
 ```
 
 <h4><li><a href="https://leetcode.com/problems/min-stack/">
@@ -2433,9 +2492,10 @@ Min Stack
 </a></li></h4>
 
 ```
+
 MinStack
 {
-    Node head
+Node head
 
     Node
     {
@@ -2477,6 +2537,7 @@ MinStack
     }
 
 }
+
 ```
 
 <h4><li><a href="https://leetcode.com/problems/rotting-oranges/">
@@ -2486,9 +2547,9 @@ Rotting Oranges
 ```
 
 given:
-    0: an empty cell
-    1: a fresh orange
-    2: a rotten orange
+0: an empty cell
+1: a fresh orange
+2: a rotten orange
 
 rows = grid.length
 cols = grid[0].length
@@ -2497,9 +2558,9 @@ count_fresh = 0
 
 <- Put the position of all rotten oranges in queue count the number of fresh oranges ->
 i: 0 -> rows - 1
-    j: 0 -> cols - 1
-        if grid[i][j] == 2
-            queue.offer({i , j})
+j: 0 -> cols - 1
+if grid[i][j] == 2
+queue.offer({i , j})
 
         else if(grid[i][j] == 1) {
             count_fresh++
@@ -2507,7 +2568,7 @@ i: 0 -> rows - 1
 //if count of fresh oranges is zero --> RETURN 0
 
 if count_fresh == 0
-    RETURN 0
+RETURN 0
 
 count = 0
 
@@ -2515,8 +2576,8 @@ dirs = [[1,0], [-1,0], [0,1], [0,-1]]
 
 <- bfs starting from initially rotten oranges ->
 WHILE !queue.isEmpty
-    count++
-    size = queue.size
+count++
+size = queue.size
 
     i: 0 -> size - 1
         point = queue.poll
@@ -2534,6 +2595,7 @@ WHILE !queue.isEmpty
             count_fresh--
 
 RETURN count_fresh == 0 ? count - 1 : -1
+
 ```
 
 </ol>
@@ -2596,8 +2658,8 @@ KMP Algorithm for Pattern Searching
 
 KMPSearch (pat, txt)
 {
-    int M = pat.length
-    int N = txt.length
+int M = pat.length
+int N = txt.length
 
     int[M] lps
     j = 0
@@ -2619,13 +2681,14 @@ KMPSearch (pat, txt)
                 j = lps[j - 1]
             else
                 i = i + 1
+
 }
 
 computeLPSArray(pat, M, lps)
 {
-    len = 0
-    i = 1
-    lps[0] = 0
+len = 0
+i = 1
+lps[0] = 0
 
     WHILE i < M
         if pat[i] == pat[len]
@@ -2640,7 +2703,9 @@ computeLPSArray(pat, M, lps)
             else
                 lps[i] = len
                 i++
+
 }
+
 ```
 
 <h4><li><a href="https://www.geeksforgeeks.org/minimum-characters-added-front-make-string-palindrome/">
@@ -2694,21 +2759,23 @@ Check whether two strings are anagram of each other
 </a></li></h4>
 
 ```
+
 int[256] count
 int i
 
 if str1.length != str2.length
-    RETURN false
+RETURN false
 
 i: 0 -> str1.length - 1
-    count[str1[i] - 'a']++
-    count[str2[i] - 'a']--
+count[str1[i] - 'a']++
+count[str2[i] - 'a']--
 
 i: 0 -> 256 - 1
-    if count[i] != 0
-        RETURN false
+if count[i] != 0
+RETURN false
 
 RETURN true
+
 ```
 
 <h4><li><a href="https://leetcode.com/problems/count-and-say/">
@@ -2716,6 +2783,7 @@ Find the Duplicate Number
 </a></li></h4>
 
 ```
+
 countAndSay (n)
 s = "1"
 
@@ -2743,6 +2811,7 @@ count = 1
     sb.append(c)
 
     RETURN sb.toString
+
 ```
 
 <h4><li><a href="https://leetcode.com/problems/compare-version-numbers/">
@@ -2750,6 +2819,7 @@ Compare Version Numbers
 </a></li></h4>
 
 ```
+
 given: String version1, String version2
 
 levels1 = version1.split(".")
@@ -2765,8 +2835,8 @@ i:0 -> length - 1
     if compare != 0
         RETURN compare
 
-
 RETURN 0
+
 ```
 
 </ol>
@@ -2778,24 +2848,24 @@ Binary Tree Inorder Traversal
 </a></li></h4>
 
 ```
-APPROACH 1: Iterating method using Stack
 
+APPROACH 1: Iterating method using Stack
 
 res = new ArrayList<Integer>
 stack = new Stack<TreeNode>
 curr = root
 
 while curr != null OR !stack.isEmpty
-    while curr != null
-        stack.push(curr)
-        curr = curr.left
+while curr != null
+stack.push(curr)
+curr = curr.left
 
     curr = stack.pop
     res.add(curr.val)
     curr = curr.right
 
-
 RETURN res
+
 ```
 
 <h4><li><a href="https://leetcode.com/problems/binary-tree-preorder-traversal/">
@@ -2803,24 +2873,24 @@ Binary Tree Preorder Traversal
 </a></li></h4>
 
 ```
-APPROACH 1: Iterating method using Stack
 
+APPROACH 1: Iterating method using Stack
 
 res = new ArrayList<Integer>
 stack = new Stack<TreeNode>
 curr = root
 
 while curr != null OR !stack.isEmpty
-    while curr != null
-        res.add(curr.val)
-        stack.push(curr)
-        curr = curr.left
+while curr != null
+res.add(curr.val)
+stack.push(curr)
+curr = curr.left
 
     curr = stack.pop
     curr = curr.right
 
-
 RETURN res
+
 ```
 
 <h4><li><a href="">
@@ -2828,24 +2898,24 @@ Binary Tree Postorder Traversal
 </a></li></h4>
 
 ```
-APPROACH 1: Iterating method using Stack
 
+APPROACH 1: Iterating method using Stack
 
 res = new ArrayList<Integer>
 stack = new Stack<TreeNode>
 curr = root
 
 while curr != null OR !stack.isEmpty
-    while curr != null
-        stack.add(curr)
-        res.add(curr.val)
-        curr = curr.right
+while curr != null
+stack.add(curr)
+res.add(curr.val)
+curr = curr.right
 
     curr = stack.pop
     curr = curr.left
 
-
 RETURN res
+
 ```
 
 <h4><li><a href="https://www.geeksforgeeks.org/print-left-view-binary-tree/">
@@ -2853,18 +2923,18 @@ Print Left View of a Binary Tree
 </a></li></h4>
 
 ```
+
 APPROACH 1: Iterating method using Queue
 
-
 if root == null
-    RETURN
+RETURN
 
 queue = new Queue<Node>
 queue.add(root)
 
 while !queue.isEmpty
-    <- number of nodes at current level ->
-    n = queue.size
+<- number of nodes at current level ->
+n = queue.size
 
     <- Traverse all nodes of current level ->
     i: 1 -> n
@@ -2889,26 +2959,26 @@ Bottom View of a Binary Tree
 </a></li></h4>
 
 ```
+
 APPROACH 1 – Using Queue
 
 Node
 {
-	int data <- data of the node
-	int hd <- horizontal distance of the node
-	Node left, right <- left and right references
+int data <- data of the node
+int hd <- horizontal distance of the node
+Node left, right <- left and right references
 
+    Node (key)
+    	data = key
+    	hd = INF
+    	left = right = null
 
-	Node (key)
-		data = key
-		hd = INF
-		left = right = null
 }
-
 
 bottomView
 {
-    if root == null
-        RETURN
+if root == null
+RETURN
 
     hd = 0
     map = new TreeMap<Integer, Integer>
@@ -2938,6 +3008,7 @@ bottomView
     while iterator.hasNext
         me = iterator.next
         sout(me.getValue)
+
 }
 
 ```
@@ -2947,9 +3018,10 @@ Print Nodes in Top View of Binary Tree
 </a></li></h4>
 
 ```
+
 QueueObj {
-    Node node
-    int hd
+Node node
+int hd
 
     QueueObj (node, hd)
 
@@ -2958,19 +3030,17 @@ QueueObj {
 
 }
 
-
 q = new Queue<QueueObj>
 topViewMap = new TreeMap<Integer, Node>
 
 IF root == NULL
-    RETURN
+RETURN
 
 ELSE
-    q.add(new QueueObj(root, 0))
-
+q.add(new QueueObj(root, 0))
 
 while !q.isEmpty
-    QueueObj tmpNode = q.poll
+QueueObj tmpNode = q.poll
 
     if !topViewMap.containsKey(tmpNode.hd)
         topViewMap.put(tmpNode.hd, tmpNode.node)
@@ -2983,9 +3053,8 @@ while !q.isEmpty
         qo = new QueueObj(tmpNode.node.right, tmpNode.hd + 1)
         q.add(qo)
 
-
 for (entry : topViewMap.entrySet)
-    sout(entry.getValue.data)
+sout(entry.getValue.data)
 
 ```
 
@@ -2994,9 +3063,10 @@ Binary Tree Level Order Traversal
 </a></li></h4>
 
 ```
+
 levelOrder (root)
-    queue = new Queue<TreeNode>
-    wrapList = new LinkedList<List<Integer>>
+queue = new Queue<TreeNode>
+wrapList = new LinkedList<List<Integer>>
 
     if root == null
     RETURN wrapList
@@ -3018,8 +3088,8 @@ levelOrder (root)
 
         wrapList.add(subList)
 
-
 RETURN wrapList
+
 ```
 
 <h4><li><a href="https://leetcode.com/problems/maximum-depth-of-binary-tree/">
@@ -3027,9 +3097,10 @@ Maximum Depth of Binary Tree
 </a></li></h4>
 
 ```
+
 maxDepth(root)
-    if root == null
-        RETURN 0
+if root == null
+RETURN 0
 
     RETURN 1 + max(maxDepth(root.left), maxDepth(root.right))
 
@@ -3040,12 +3111,12 @@ Diameter of Binary Tree
 </a></li></h4>
 
 ```
+
 max = 0
 
-
 maxDepth (root)
-    IF root == null
-        RETURN 0
+IF root == null
+RETURN 0
 
     left = maxDepth(root.left)
     right = maxDepth(root.right)
@@ -3055,6 +3126,7 @@ maxDepth (root)
     RETURN max(left, right) + 1
 
 diameter: max
+
 ```
 
 <h4><li><a href="https://leetcode.com/problems/balanced-binary-tree/">
@@ -3062,18 +3134,18 @@ Balanced Binary Tree
 </a></li></h4>
 
 ```
+
 isBalanced (root)
-    IF root == null
-        RETURN true
+IF root == null
+RETURN true
 
     RETURN abs(maxDepth(root.left) - maxDepth(root.right)) <= 1
             AND isBalanced(root.left)
             AND isBalanced(root.right)
 
-
 maxDepth (root)
-    IF root == null
-        RETURN 0
+IF root == null
+RETURN 0
 
     RETURN 1 + max(maxDepth(root.left), maxDepth(root.right))
 
@@ -3084,11 +3156,12 @@ Lowest Common Ancestor of a Binary Tree
 </a></li></h4>
 
 ```
+
 TreeNode ans = null
 
 recurseTree (currentNode, p, q)
-    IF currentNode == NULL
-        RETURN false
+IF currentNode == NULL
+RETURN false
 
     left = this.recurseTree(currentNode.left, p, q) ? 1 : 0
     right = this.recurseTree(currentNode.right, p, q) ? 1 : 0
@@ -3102,10 +3175,9 @@ recurseTree (currentNode, p, q)
 
     RETURN (mid + left + right > 0)
 
-
 lowestCommonAncestor (root, p, q)
-    this.recurseTree(root, p, q)
-    RETURN this.ans
+this.recurseTree(root, p, q)
+RETURN this.ans
 
 ```
 
@@ -3114,12 +3186,13 @@ Same Tree
 </a></li></h4>
 
 ```
+
 given: two binary trees p and q,
 
 isSameTree (p, q)
 {
-    if p == null AND q == null
-        RETURN true
+if p == null AND q == null
+RETURN true
 
     if q == null OR p == null
         RETURN false
@@ -3128,7 +3201,9 @@ isSameTree (p, q)
         RETURN false
 
     RETURN isSameTree(p.right, q.right) AND isSameTree(p.left, q.left)
+
 }
+
 ```
 
 <h4><li><a href="https://leetcode.com/problems/binary-tree-maximum-path-sum/">
@@ -3136,17 +3211,17 @@ Binary Tree Maximum Path Sum
 </a></li></h4>
 
 ```
+
 int maxValue
 
 maxPathSum (root)
-    maxValue = Integer.MIN_VALUE
-    maxPathDown(root)
-    RETURN maxValue
-
+maxValue = Integer.MIN_VALUE
+maxPathDown(root)
+RETURN maxValue
 
 maxPathDown(node)
-    if node == null
-        RETURN 0
+if node == null
+RETURN 0
 
     left = max(0, maxPathDown(node.left))
     right = max(0, maxPathDown(node.right))
@@ -3164,23 +3239,22 @@ Construct Binary Tree from Preorder and Inorder Traversal
 </a></li></h4>
 
 ```
+
 int preorderIndex
 Map<Integer, Integer> inorderIndexMap
 
 buildTree (preorder, inorder)
-    preorderIndex = 0
-    inorderIndexMap = new HashMap<Integer, Integer>
+preorderIndex = 0
+inorderIndexMap = new HashMap<Integer, Integer>
 
     i: 0 -> inorder.length - 1
         inorderIndexMap.put(inorder[i], i)
 
     RETURN arrayToTree(preorder, 0, preorder.length - 1)
 
-
-
 arrayToTree (preorder, left, right)
-    if left > right
-        RETURN null
+if left > right
+RETURN null
 
     rootValue = preorder[preorderIndex++]
     root = new TreeNode(rootValue)
@@ -3197,12 +3271,13 @@ Construct Binary Tree from Preorder and Inorder Traversal
 </a></li></h4>
 
 ```
+
 int preorderIndex
 Map<Integer, Integer> inorderIndexMap
 
 buildTree (preorder, inorder)
-    preorderIndex = 0
-    inorderIndexMap = new HashMap<>()
+preorderIndex = 0
+inorderIndexMap = new HashMap<>()
 
     i: 0 -> inorder.length - 1
         inorderIndexMap.put(inorder[i], i)
@@ -3210,10 +3285,9 @@ buildTree (preorder, inorder)
 
     RETURN arrayToTree(preorder, 0, preorder.length - 1)
 
-
 arrayToTree (preorder, left, right)
-    if left > right
-        RETURN null
+if left > right
+RETURN null
 
     rootValue = preorder[preorderIndex++]
     root = new TreeNode(rootValue)
@@ -3223,6 +3297,7 @@ arrayToTree (preorder, left, right)
 
 
     RETURN root
+
 ```
 
 <h4><li><a href="">
@@ -3230,18 +3305,19 @@ Symmetric Tree
 </a></li></h4>
 
 ```
-isSymmetric (root)
-    RETURN root == NULL OR isSymmetricHelp(root.left, root.right)
 
+isSymmetric (root)
+RETURN root == NULL OR isSymmetricHelp(root.left, root.right)
 
 isSymmetricHelp (left, right)
-    if left == NULL OR right == NULL
-        RETURN left == right
+if left == NULL OR right == NULL
+RETURN left == right
 
     if left.val != right.val
         RETURN false
 
     RETURN isSymmetricHelp(left.left, right.right) AND isSymmetricHelp(left.right, right.left)
+
 ```
 
 <h4><li><a href="https://leetcode.com/problems/flatten-binary-tree-to-linked-list/">
@@ -3249,11 +3325,12 @@ Flatten Binary Tree to Linked List
 </a></li></h4>
 
 ```
+
 TreeNode prev = null
 
 flatten (root)
-    if root == null
-        RETURN
+if root == null
+RETURN
 
     flatten(root.right)
     flatten(root.left)
@@ -3274,12 +3351,13 @@ Populating Next Right Pointers in Each Node
 </a></li></h4>
 
 ```
+
 <- Node {val, left, right, next} ->
 
 levelStart = root
 
 while levelStart != NULL
-    curr = levelStart
+curr = levelStart
 
     while curr != NULL
         if curr.left != NULL
@@ -3300,12 +3378,14 @@ Search in a Binary Search Tree
 </a></li></h4>
 
 ```
+
 while root != NULL AND root.val != val
-            root = val < root.val
-                ? root.left
-                : root.right
+root = val < root.val
+? root.left
+: root.right
 
 return root
+
 ```
 
 <h4><li><a href="https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/">
@@ -3313,19 +3393,21 @@ Convert Sorted Array to Binary Search Tree
 </a></li></h4>
 
 ```
+
 sortedArrayToBST (num)
 {
-    if num.length == 0
-        return null
+if num.length == 0
+return null
 
     TreeNode head = helper(num, 0, num.length - 1)
     return head
+
 }
 
 helper (num, low, high)
 {
-    if low > high
-        return null
+if low > high
+return null
 
     mid = (low + high) / 2
     node = new TreeNode(num[mid])
@@ -3334,7 +3416,9 @@ helper (num, low, high)
     node.right = helper(num, mid + 1, high)
 
     return node
+
 }
+
 ```
 
 <h4><li><a href="">
@@ -3342,15 +3426,16 @@ Validate Binary Search Tree
 </a></li></h4>
 
 ```
+
 approach: iterative inorder traversal
 
 stack = new Stack<TreeNode>
 pre = null
 
 while root != NULL OR !stack.isEmpty
-    while root != NULL
-        stack.push(root)
-        root = root.left
+while root != NULL
+stack.push(root)
+root = root.left
 
     root = stack.pop
 
@@ -3360,8 +3445,8 @@ while root != NULL OR !stack.isEmpty
     pre = root
     root = root.right
 
-
 return true
+
 ```
 
 <h4><li><a href="">
@@ -3369,16 +3454,18 @@ Lowest Common Ancestor of a Binary Search Tree
 </a></li></h4>
 
 ```
+
 GIVEN: TreeNode root, TreeNode p, TreeNode q
 
 <- p and q are in the same subtree (meaning their values are both smaller or both larger than root's ->
 
-while (root.val - p.val) * (root.val - q.val) > 0
-        root = p.val < root.val
-            ? root.left
-            : root.right
+while (root.val - p.val) \* (root.val - q.val) > 0
+root = p.val < root.val
+? root.left
+: root.right
 
 return root
+
 ```
 
 <h4><li><a href="https://www.geeksforgeeks.org/inorder-predecessor-successor-given-key-bst/">
@@ -3386,28 +3473,31 @@ Inorder predecessor and successor for a given key in BST
 </a></li></h4>
 
 ```
+
 findPS(root, a, p, q)
 {
-	if root == null
-		return
+if root == null
+return
 
-	<- traverse the left subtree ->
-	findPS(root.left, a, p, q)
+    <- traverse the left subtree ->
+    findPS(root.left, a, p, q)
 
     <- root is greater than a ->
-	if root AND root.data > a
-		if q[0] == null OR (q[0] != null AND q[0].data > root.data)
-			q[0] = root
+    if root AND root.data > a
+    	if q[0] == null OR (q[0] != null AND q[0].data > root.data)
+    		q[0] = root
 
     ELIF root AND root.data < a
         p[0] = root
 
-	<- traverse the right subtree ->
-	findPS(root.right, a, p, q)
+    <- traverse the right subtree ->
+    findPS(root.right, a, p, q)
+
 }
 
 predecessor: p[0]
 successor: q[0]
+
 ```
 
 <h4><li><a href="">
@@ -3418,3 +3508,4 @@ successor: q[0]
 ```
 
 </ol>
+```
