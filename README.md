@@ -47,8 +47,10 @@ MISSING_NUMBER: xor
 <h4><li><a href="https://www.geeksforgeeks.org/find-a-repeating-and-a-missing-number/">
 Missing Number & Repeating Number
 </a></li></h4>
-Time Complexity: O(n)
+
+Time Complexity: O(n) <br />
 Space Complexity: O(1)
+
 ```
 
 xor = 0
