@@ -1996,8 +1996,8 @@ FindAllocate minimum number of pages
 ```
 
 GIVEN:
-arr1[5] = {2, 3, 6, 7, 9}
-arr2[4] = {1, 4, 8, 10}
+    arr1[5] = {2, 3, 6, 7, 9}
+    arr2[4] = {1, 4, 8, 10}
 
 CALL: kth(arr1, arr2, arr1 + 5, arr2 + 4, k - 1)
 
@@ -2048,7 +2048,7 @@ approach: bit manipulation
 List<List<Integer>> powerSet
 
 i: 0 -> (1 << nums.length)
-List<Integer> set
+    List<Integer> set
 
     j: 0 -> nums.length - 1
         if (i >> j) & 1 != 0
@@ -2072,21 +2072,24 @@ Implementing Stack using Arrays
 
 Stack
 {
-<- Maximum size of Stack ->
-MAX = 1000
-
-top
-a[MAX]
+    int top
+    MAX = 1000
+    a[] = new int[MAX]
 
     Stack
+    {
         top = -1
+    }
 
 
     isEmpty
+    {
         RETURN (top < 0)
+    }
 
 
     push(x)
+    {
         if top >= (MAX - 1)
             sout("Stack Overflow")
             RETURN false
@@ -2095,18 +2098,22 @@ a[MAX]
             a[++top] = x
             sout(x + " pushed into stack")
             RETURN true
+    }
 
 
     pop
+    {
         if top < 0
             sout("Stack Underflow")
             RETURN 0
 
         else
             RETURN a[top--]
+    }
 
 
     peek
+    {
         if top < 0
             sout("Stack Underflow")
             RETURN 0
@@ -2117,7 +2124,7 @@ a[MAX]
     print
         i = top -> 0
             sout(a[i])
-
+    }
 }
 
 ```
@@ -2130,16 +2137,20 @@ Implement Queue using Arrays
 
 Queue
 {
-front, rear, capacity
-int queue[]
+    int front
+    int rear
+    int capacity
+    int queue[]
 
     Queue (c)
+    {
     	front = rear = 0
     	capacity = c
     	queue = new int[capacity]
-
+    }
 
     enqueue (data)
+    {
     	if capacity == rear
     		sout("Queue is full")
     		RETURN
@@ -2147,9 +2158,10 @@ int queue[]
     	else
     		queue[rear] = data
     		rear++
-
+    }
 
     dequeue
+    {
     	if front == rear
     		sout("Queue is empty")
 
@@ -2163,25 +2175,28 @@ int queue[]
     			queue[rear] = 0
 
     		rear--
+    }
 
 
     display
+    {
     	if front == rear
     		sout("\nQueue is Empty\n")
     		RETURN
 
     	i: front -> rear - 1
     		sout(queue[i])
+    }
 
 
     front
+    {
     	if front == rear
     		sout("Queue is Empty")
     	else
             sout(queue[front])
-
+    }
 }
-
 ```
 
 <h4><li><a href="https://leetcode.com/problems/implement-stack-using-queues/">
@@ -2190,10 +2205,10 @@ Implement Stack using Queues
 
 ```
 
-MyStack {
+MyStack
+{
 
-    LinkedList<Integer> q1
-
+    q1 = new LinkedList<Integer>
 
     push (x)
         q1.add(x)
@@ -2240,23 +2255,27 @@ Stack<Integer> s2
 
     <- Removes the element from in front of queue ->
     pop
+    {
         if s2.isEmpty
             WHILE !s1.isEmpty
                 s2.push(s1.pop)
 
         s2.pop
+    }
 
 
     peek
+    {
         if !s2.isEmpty
             RETURN s2.peek
 
         RETURN front
-
+    }
 
     empty
+    {
         RETURN s1.isEmpty AND s2.isEmpty
-
+    }
 }
 
 ```
@@ -2266,14 +2285,13 @@ Valid Parentheses
 </a></li></h4>
 
 ```
+APPROACH: stacks
 
-approach: stacks
-
-Stack<Character> stack
+stack = new Stack<Character>
 
 FOR (c : s.toCharArray)
-IF c == '('
-stack.push(')')
+    IF c == '('
+        stack.push(')')
 
     ELIF c == '{'
         stack.push('}')
@@ -2285,7 +2303,6 @@ stack.push(')')
         RETURN false
 
 RETURN stack.isEmpty
-
 ```
 
 <h4><li><a href="https://leetcode.com/problems/next-greater-element-i/">
@@ -2293,23 +2310,21 @@ Next Greater Element I
 </a></li></h4>
 
 ```
-
-approach: stacks
+APPROACH: stacks
 
 <- Map from x to next greater element of x ->
 Map<Integer, Integer> map
 Stack<Integer> stack
 
 FOR (num : nums)
-WHILE !stack.isEmpty AND stack.peek < num
-map.put(stack.pop, num)
-stack.push(num)
+    WHILE !stack.isEmpty AND stack.peek < num
+        map.put(stack.pop, num)
+        stack.push(num)
 
 i: 0 -> findNums.length - 1
-findNums[i] = map.getOrDefault(findNums[i], -1)
+    findNums[i] = map.getOrDefault(findNums[i], -1)
 
-next greater element array: findNums
-
+NEXT_GREATER_ELEMENT_ARRAY: findNums
 ```
 
 <h4><li><a href="https://www.geeksforgeeks.org/next-smaller-element/">
@@ -2317,8 +2332,7 @@ Next Smaller Element
 </a></li></h4>
 
 ```
-
-approach: stacks
+APPROACH: stacks
 
 Stack<Integer> s
 HashMap<Integer, Integer> mp
@@ -2332,23 +2346,24 @@ HashMap<Integer, Integer> mp
 i: 0 -> findNums.length - 1
 findNums[i] = map.getOrDefault(findNums[i], -1)
 
-next smaller element array: findNums
-
+NEXT_SMALLER_ELEMENT_ARRAY: findNums
 ```
 
-<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
-Find the Duplicate Number
+
+<h4><li><a href="https://www.geeksforgeeks.org/sort-a-stack-using-recursion/">
+Sort a stack using recursion
 </a></li></h4>
 
-[**58. Sort a stack using recursion**](https://www.geeksforgeeks.org/sort-a-stack-using-recursion/)
+Time Complexity: O(n^2)
+Space Complexity: O(N)
 
 ```
 
 sortedInsert (s, x)
 {
-if s.isEmpty OR x > s.peek
-s.push(x)
-RETURN
+    if s.isEmpty OR x > s.peek
+        s.push(x)
+        RETURN
 
     <- If top is greater, remove the top item and recur ->
     temp = s.pop
@@ -2362,16 +2377,10 @@ RETURN
 <- Method to sort stack ->
 sortStack(s)
 {
-if !s.isEmpty
-<- Remove the top item ->
-int x = s.pop
-
-        <- Sort remaining stack ->
+    if !s.isEmpty
+        x = s.pop
         sortStack(s)
-
-        <- Push the top item back in sorted stack ->
         sortedInsert(s, x)
-
 }
 
 ```
