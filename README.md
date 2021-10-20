@@ -204,13 +204,13 @@ slow = nums[0]
 fast = nums[nums[0]]
 
 <- run till duplicate is found ->
-WHILE slow != fast
-    slow = nums[slow]1
+WHILE (slow != fast)
+    slow = nums[slow]
     fast = nums[nums[fast]]
 
 fast = 0
 
-WHILE slow != fast
+WHILE (slow != fast)
     slow = nums[slow]
     fast = nums[fast]
 
@@ -1307,23 +1307,22 @@ Coin Change
 </a></li></h4>
 
 ```
+int dp[amt+1]
 
-int dp[amount+1]
+FOR (i: 1 -> amt)
+    min = INF
 
-i: 1 -> amount
-min = INF
-
-    FOR coin: coins
-        if i - coin >=0 AND dp[i - coin] != -1
+    FOR (coin: coins)
+        IF (i-coin >=0 AND dp[i-coin] != -1)
             min = min(min, dp[i-coin])
 
-    <- If currentAmount can not be reached, set dp[i] = -1 ->
+    <- If curAmt cant be reached, set dp[i] = -1 ->
     dp[i] = (min == INF)
         ? -1
         : 1 + min
 
-minimum number of coins: dp[amount]
 
+MINIMUM_NUMBER_OF_COINS: dp[amt]
 ```
 
 </ol>
@@ -2444,34 +2443,37 @@ LRU Cache Implementation
 </a></li></h4>
 
 ```
-
 LRUCache
 {
-Deque<Integer> doublyQueue
-HashSet<Integer> hashSet
-int CACHE_SIZE
+
+    Deque<Integer> q
+    HashSet<Integer> h
+    int CACHE_SIZE
 
     LRUCache (capacity)
+    {
     	CACHE_SIZE = capacity
-
+    }
 
     refer (page)
-    	if (!hashSet.contains(page))
-    		if doublyQueue.size == CACHE_SIZE
-    			last = doublyQueue.removeLast
-    			hashSet.remove(last)
+    {
+    	IF (!h.contains(page))
+    		IF (q.size == CACHE_SIZE)
+    			last = q.removeLast
+    			h.remove(last)
         else
-    		doublyQueue.remove(page)
+    		q.remove(page)
 
-    	doublyQueue.push(page)
-    	hashSet.add(page)
-
+    	q.push(page)
+    	h.add(page)
+    }
 
     display
+    {
     	Iterator<Integer> itr
     	WHILE itr.hasNext
     		sout(itr.next)
-
+    }
 }
 
 ```
@@ -3372,18 +3374,23 @@ Symmetric Tree
 </a></li></h4>
 
 ```
-
 isSymmetric (root)
-RETURN root == NULL OR isSymmetricHelp(root.left, root.right)
+{
+
+    RETURN root == NULL OR isSymmetricHelp(root.left, root.right)
+}
 
 isSymmetricHelp (left, right)
-if left == NULL OR right == NULL
-RETURN left == right
+{
+    if left == NULL OR right == NULL
+        RETURN left == right
 
     if left.val != right.val
         RETURN false
 
-    RETURN isSymmetricHelp(left.left, right.right) AND isSymmetricHelp(left.right, right.left)
+    RETURN isSymmetricHelp(left.left, right.right) AND
+    isSymmetricHelp(left.right, right.left)
+}
 
 ```
 
@@ -3493,17 +3500,15 @@ Validate Binary Search Tree
 </a></li></h4>
 
 ```
-
 approach: iterative inorder traversal
 
 stack = new Stack<TreeNode>
 pre = null
 
 while root != NULL OR !stack.isEmpty
-while root != NULL
-stack.push(root)
-root = root.left
-
+    while root != NULL
+    stack.push(root)
+    root = root.left
     root = stack.pop
 
     if pre != null AND root.val <= pre.val
@@ -3799,6 +3804,20 @@ Number of Islands
 
 ```
 https://leetcode.com/problems/number-of-islands/discuss/56359/Very-concise-Java-AC-solution
+```
+<h4><li><a href="">
+Min Stack
+</a></li></h4>
+
+```
+https://leetcode.com/problems/min-stack/discuss/49010/Clean-6ms-Java-solution
+```
+<h4><li><a href="">
+Sort Characters By Frequency
+</a></li></h4>
+
+```
+https://leetcode.com/problems/min-stack/discuss/49010/Clean-6ms-Java-solution
 ```
 
 </ol>

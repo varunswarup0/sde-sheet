@@ -14,6 +14,9 @@
 
 @today
 ✘ 26. Valid Sudoku @cancelled(21-10-20 17:51)
+✘ 96. Sort List @cancelled(21-10-20 23:57)
+✘ 172. 4Sum II @cancelled(21-10-21 01:00)
+✘ 173. LFU Cache @cancelled(21-10-21 01:00)
 
 
 @low
@@ -65,7 +68,7 @@
 ✘ 56. Minimum Window Substring @cancelled(21-10-20 21:56)
 ✔ 57. Subsets @done(21-10-20 00:45)
 ✔ 58. Word Search @done(21-10-20 21:58)
-☐ 59. Largest Rectangle in Histogram
+✔ 59. Largest Rectangle in Histogram @done(21-10-21 00:05)
 ☐ 60. Partition List
 ✔ 61. Subsets II @done(21-10-20 00:45)
 ☐ 62. Reverse Linked List II
@@ -73,7 +76,7 @@
 ☐ 64. Unique Binary Search Trees
 ☐ 65. Validate Binary Search Tree
 ☐ 66. Recover Binary Search Tree
-☐ 67. Symmetric Tree
+✔ 67. Symmetric Tree @done(21-10-21 00:17)
 ☐ 68. Binary Tree Level Order Traversal
 ☐ 69. Binary Tree Zigzag Level Order Traversal
 ☐ 70. Construct Binary Tree from Preorder and Inorder Traversal
@@ -101,14 +104,13 @@
 ✔ 92. Linked List Cycle @done(21-10-20 00:46)
 ☐ 93. Reorder List
 ☐ 94. Binary Tree Postorder Traversal
-☐ 95. LRU Cache
-☐ 96. Sort List
+✔ 95. LRU Cache @done(21-10-20 23:52)
 ☐ 97. Max Points on a Line
 ☐ 98. Evaluate Reverse Polish Notation
 ☐ 99. Reverse Words in a String
 ☐ 100. Maximum Product Subarray
 ☐ 101. Find Minimum in Rotated Sorted Array
-☐ 102. Min Stack
+✔ 102. Min Stack @done(21-10-21 00:26)
 ☐ 103. Compare Version Numbers
 ☐ 104. Two Sum II - Input array is sorted
 ☐ 105. Binary Search Tree Iterator
@@ -123,7 +125,7 @@
 ☐ 114. Course Schedule II
 ☐ 115. Design Add and Search Words Data Structure
 ☐ 116. Word Search II
-☐ 117. Kth Largest Element in an Array
+✔ 117. Kth Largest Element in an Array @done(21-10-21 00:58)
 ☐ 118. The Skyline Problem
 ☐ 119. Maximal Square
 ☐ 120. Count Complete Tree Nodes
@@ -141,10 +143,10 @@
 ☐ 132. Search a 2D Matrix II
 ☐ 133. Binary Tree Paths
 ☐ 134. Single Number III
-☐ 135. Missing Number
+✔ 135. Missing Number @done(21-10-21 00:47)
 ☐ 136. Integer to English Words
 ☐ 137. Peeking Iterator
-☐ 138. Find the Duplicate Number
+✔ 138. Find the Duplicate Number @done(21-10-21 00:49)
 ☐ 139. Game of Life
 ☐ 140. Find Median from Data Stream
 ☐ 141. Serialize and Deserialize Binary Tree
@@ -153,7 +155,7 @@
 ☐ 144. Best Time to Buy and Sell Stock with Cooldown
 ☐ 145. Burst Balloons
 ☐ 146. Count of Smaller Numbers After Self
-☐ 147. Coin Change
+✔ 147. z @done(21-10-21 00:47)
 ☐ 148. Odd Even Linked List
 ☐ 149. Longest Increasing Path in a Matrix
 ☐ 150. Increasing Triplet Subsequence
@@ -178,12 +180,10 @@
 ☐ 169. Serialize and Deserialize BST
 ☐ 170. Delete Node in a BST
 ☐ 171. Sort Characters By Frequency
-☐ 172. 4Sum II
-☐ 173. LFU Cache
 ☐ 174. Island Perimeter
 ☐ 175. Concatenated Words
 ☐ 176. Sliding Window Median
-☐ 177. Next Greater Element I
+✔ 177. Next Greater Element I @done(21-10-21 00:59)
 ☐ 178. Next Greater Element II
 ☐ 179. Most Frequent Subtree Sum
 ☐ 180. Find Bottom Left Tree Value
