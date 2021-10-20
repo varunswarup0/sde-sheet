@@ -1,0 +1,25 @@
+☐ Do all LC sqls... and window function implementation), and 1 DSA(Prepare DP easy ones properly)
+☐ Basic SQL(group, join, aggregate) and Python(Basic data structure manipulation)
+☐ He gave me three tables and asked to write an sql query to get some data out of the tables. I had to use joins to get the data.
+☐ For Data Engineer(DE) role prepare
+  ☐ SQL queries and
+  ☐ Database concepts as well as
+  ☐ cloud computing and
+  ☐ big data basics. You get to work on AWS as a DE.
+
+☐ Projects and schema(you need to explain clearly about your projects and technologies you used. Latest Technologies might help you to grab their attention like ML)
+☐ Simple queries on MongoDB(as it is on my resume)
+☐ SQL Queries based on joins and Inner query(This part is little difficult you may get confused)
+☐ Draw database schema of uber
+☐ normalization and normal forms
+☐ Try to normalize the given 2 tables to 3NF
+☐ What is cloud computing and what are the advantages over a normal database
+☐ oops and DBMS concepts(polymorphism, abstraction, savepoint, DML, DDL commands etc)
+☐ Types of joins
+☐ What is a distributed file system?
+
+
+☐ Project and schema
+☐ SQL queries harder than the previous round. They test your idea and efficiency of retrieving data using joins and inner queries
+☐ Simple DBMS concepts
+☐ 2 simple coding questions(frequency of a number in an array, find the second largest number the given array)

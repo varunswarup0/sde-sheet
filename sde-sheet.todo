@@ -1,0 +1,319 @@
+
+SDE-SHEET:
+
+@Arrays
+☐ Sort an array of 0’s 1’s 2’s without using extra space or sorting algo
+☐ Repeat and Missing Number
+☐ Merge two sorted Arrays without extra space
+☐ Kadane’s Algorithm
+☐ Merge Overlapping Subintervals
+☐ Find the duplicate in an array of N+1 integers.
+☐ Set Matrix Zeros
+☐ Pascal Triangle
+☐ Next Permutation
+☐ Inversion of Array (Using Merge Sort)
+☐ Stock Buy and Sell
+☐ Rotate Matrix
+
+
+@Arrays/maths
+☐ Search in a 2D matrix
+☐ Pow(X,n)
+☐ Majority Element (>N/2 times)
+☐ Majority Element (>N/3 times)
+☐ Grid Unique Paths
+☐ Reverse Pairs
+
+
+@Hashing
+☐ 2 Sum problem
+☐ 4 Sum problem
+☐ Longest Consecutive Sequence
+☐ Largest Subarray with 0 sum
+☐ Count number of subarrays with given XOR(this clears a lot of problems)
+☐ Longest substring without repeat
+
+
+@LinkedList
+☐ Reverse a LinkedList
+☐ Find middle of LinkedList
+☐ Merge two sorted Linked List
+☐ Remove N-th node from back of LinkedList
+☐ Delete a given Node when a node is given. (0(1) solution)
+☐ Add two numbers as LinkedList
+☐ Find intersection point of Y LinkedList
+☐ Detect a cycle in Linked List
+☐ Reverse a LinkedList in groups of size k.
+☐ Check if a LinkedList is palindrome or not.
+☐ Find the starting point of the Loop of LinkedList
+☐ Flattening of a LinkedList
+☐ Rotate a LinkedList
+
+
+@2-pointer
+☐ Clone a Linked List with random and next pointer
+☐ 3 sum
+☐ Trapping rainwater
+☐ Remove Duplicate from Sorted array
+☐ Max consecutive ones
+
+@Greedy
+☐ N meeting in one room
+☐ Minimum number of platforms required for a railway
+☐ Job sequencing Problem
+☐ Fractional Knapsack Problem
+☐ Greedy algorithm to find minimum number of coins
+☐ Activity Selection (it is same as N meeting in one room)
+
+
+@Recursion
+
+☐ Subset Sums
+☐ Subset-II
+☐ Combination sum-1
+☐ Combination sum-2
+☐ Palindrome Partitioning
+☐ K-th permutation Sequence
+
+Day10: (Recursion and Backtracking)
+
+Print all Permutations of a string/array
+https://www.youtube.com/watch?v=f2ic2Rsc9pU&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=52
+N queens Problem
+https://www.youtube.com/watch?v=i05Ju7AftcM&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=57
+Sudoku Solver
+https://www.youtube.com/watch?v=FWAIf_EVUKE&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=58
+
+M coloring Problem
+https://www.youtube.com/watch?v=wuVwUK25Rfc&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=59
+Rat in a Maze
+https://www.youtube.com/watch?v=bLGZhJlt4y0&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=60
+Word Break (print all ways)  (Will be covered later in DP series)
+
+
+
+Day11: (Binary Search)
+
+N-th root of an integer (use binary search) (square root, cube root, ..)
+https://www.youtube.com/watch?v=WjpswYrS2nY&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=61
+
+Matrix Median
+https://www.youtube.com/watch?v=63fPPOdIr2c&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=62
+Find the element that appears once in sorted array, and rest element appears twice (Binary search)
+https://www.youtube.com/watch?v=PzszoiY5XMQ&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=63
+Search element in a sorted and rotated array/ find pivot where it is rotated
+https://www.youtube.com/watch?v=r3pMQ8-Ad5s&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=64
+
+Median of 2 sorted arrays
+https://www.youtube.com/watch?v=NTop3VTjmxk&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=65
+
+K-th element of two sorted arrays
+https://www.youtube.com/watch?v=nv7F4PiLUzo&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=66
+Allocate Minimum Number of Pages
+https://www.youtube.com/watch?v=gYmWHvRHu-s&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=69
+Aggressive Cows
+https://www.youtube.com/watch?v=wSOfYesTBRk&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=70
+
+Day12: (Bits) (Optional, very rare topic in interviews, but if you have time left, someone might ask)
+
+Check if a number if a power of 2 or not in O(1)
+Count total set bits
+Divide Integers without / operator
+Power Set (this is very important)
+https://www.youtube.com/watch?v=b7AYbpM5YrE&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=67
+Find MSB in o(1)
+Find square of a number without using multiplication or division operators.
+Day13: (Stack and Queue)
+
+Implement Stack Using Arrays https://www.youtube.com/watch?v=GYptUgnIM_I&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=68
+Implement Queue Using Arrays
+https://www.youtube.com/watch?v=M6GnoUDpqEE&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=72
+Implement Stack using Queue (using single queue)
+https://www.youtube.com/watch?v=jDZQKzEtbYQ&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=74
+Implement Queue using Stack (0(1) amortised method)
+https://www.youtube.com/watch?v=3Et9MrMc02A&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=75
+
+
+Check for balanced parentheses
+https://www.youtube.com/watch?v=wkDfsKijrZ8&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=74
+
+
+Next Greater Element
+https://www.youtube.com/watch?v=Du881K7Jtk8&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=75
+Sort a Stack
+
+Update: Find this sheet on takeuforward.org for improved user experience
+
+
+Day14:
+
+Next Smaller Element
+Similar to previous question next greater element, just do pop the greater elements out ..
+
+
+LRU cache (vvvv. imp)
+https://www.youtube.com/watch?v=xDEuM5qa0zg&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=77
+
+Clean code: https://www.youtube.com/watch?v=Xc4sICC8m4M&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=78
+LFU Cache (Hard, can be ignored)
+https://www.youtube.com/watch?v=0PSB9y8ehbk&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=79
+Code: https://www.youtube.com/watch?v=mzqHlAW7jeE&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=80
+
+
+Largest rectangle in histogram (Do the one pass solution)
+
+Two pass:
+https://www.youtube.com/watch?v=X0X6G-eWgQ8&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=81
+
+One pass:
+https://www.youtube.com/watch?v=jC_cWLy7jSI&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=82
+Sliding Window maximum
+https://www.youtube.com/watch?v=CZQGRp93K4k&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=83
+Implement Min Stack
+Rotten Orange (Using BFS)
+Stock Span Problem
+Find maximum of minimums of every window size
+The Celebrity Problem
+
+Day15: (String)
+
+Reverse Words in a String
+Longest Palindrome in a string
+Roman Number to Integer and vice versa
+Implement ATOI/STRSTR
+Longest Common Prefix
+Rabin Karp
+Day16: (String)
+
+Prefix Function/Z-Function
+KMP algo / LPS(pi) array
+Minimum characters needed to be inserted in the beginning to make it palindromic.
+Check for Anagrams
+Count and Say
+Compare version numbers
+
+Day17: (Binary Tree)
+
+Inorder Traversal (with recursion and without recursion)
+Preorder Traversal (with recursion and without recursion)
+Postorder Traversal (with recursion and without recursion)
+LeftView Of Binary Tree
+Bottom View of Binary Tree
+Top View of Binary Tree
+
+Day18: (Binary Tree)
+
+Level order Traversal / Level order traversal in spiral form
+Height of a Binary Tree
+Diameter of Binary Tree
+Check if Binary tree is height balanced or not
+LCA in Binary Tree
+Check if two trees are identical or not
+
+Day 19: (Binary Tree)
+
+Maximum path sum
+Construct Binary Tree from inorder and preorder
+Construct Binary Tree from Inorder and Postorder
+Symmetric Binary Tree
+Flatten Binary Tree to LinkedList
+Check if Binary Tree is mirror of itself or not
+
+Day 20: (Binary Search Tree)
+
+Populate Next Right pointers of Tree
+Search given Key in BST
+Construct BST from given keys.
+Check is a BT is BST or not
+Find LCA of two nodes in BST
+Find the inorder predecessor/successor of a given Key in BST.
+
+Day21: (BinarySearchTree)
+
+Floor and Ceil in a BST
+Find K-th smallest and K-th largest element in BST (2 different Questions)
+Find a pair with a given sum in BST
+BST iterator
+Size of the largest BST in a Binary Tree
+Serialize and deserialize Binary Tree
+
+Day22: (Mixed Questions)
+
+Binary Tree to Double Linked List
+Find median in a stream of running integers.
+K-th largest element in a stream.
+Distinct numbers in Window.
+K-th largest element in an unsorted array.
+Flood-fill Algorithm
+
+Day23: (Graph) https://www.youtube.com/watch?v=LCrovIMurxY&list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw&index=2
+
+
+Clone a graph (Not that easy as it looks)
+DFS
+BFS
+Detect A cycle in Undirected Graph/Directed Graph
+Topo Sort
+Number of islands (Do in Grid and Graph both)
+Bipartite Check
+
+Day24: (Graph)
+
+https://www.youtube.com/watch?v=LCrovIMurxY&list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw&index=2
+
+SCC(using KosaRaju’s algo)
+Djisktra’s Algorithm
+Bellman Ford Algo
+Floyd Warshall Algorithm
+MST using Prim’s Algo
+MST using Kruskal’s Algo
+
+Day25: (Dynamic Programming)
+
+Max Product Subarray
+Longest Increasing Subsequence
+Longest Common Subsequence
+0-1 Knapsack
+Edit Distance
+Maximum sum increasing subsequence
+Matrix Chain Multiplication
+
+Day26: (DP)
+
+Maximum sum path in matrix, (count paths, and similar type do, also backtrack to find the maximum path)
+Coin change
+Subset Sum
+Rod Cutting
+Egg Dropping
+Word Break
+Palindrome Partitioning (MCM Variation)
+Maximum profit in Job scheduling
+
+
+https://docs.google.com/document/d/1sQlRDw6--HwyxeFL7b4kBsOG-Tz7rXMbpWNnfvJErA4/edit (For core revision)
+
+Day27:
+
+Revise OS notes that you would have made during your sem
+If not made notes, spend 2 or 3  days and make notes from Knowledge Gate.
+
+Day28:
+
+Revise DBMS notes that you would have made during your semesters.
+If not made notes, spend 2 or 3  days and make notes from Knowledge Gate.
+
+Day29:
+
+Revise CN notes, that you would have made during your sem.
+If not made notes, spend 2 or 3  days and make notes from Knowledge Gate.
+
+
+Day30:
+
+Make a note of how will your represent your projects, and prepare all questions related to tech which you have used in your projects. Prepare a note which you can say for 3-10 minutes when he asks you that say something about the project.
+
+
+Hurrah!! You are ready for your placement after a month of hard-work without a cheat day.
+
+
+Update: Find this sheet on takeuforward.org for improved user experience

@@ -143,18 +143,20 @@ given: Interval[n] = { startTime, endTime }
 st = new Stack<Interval>
 result = new Stack<Intervals>
 
+
+<- Sort based on increasing order of starting time ->
 sort(intervals)
 st.push(intervals[0])
 
-i: 1 -> n - 1
+FOR (i: 1 -> n - 1)
     currInterval = st.peek
 
-    intervals[i].startTime <= currInterval.endTime
+    (intervals[i].startTime <= currInterval.endTime)
         ? currInterval.endTime = max(currInterval.endTime, intervals[i].endTime)
         : st.push(intervals[i])
 
 
-WHILE st.size != 0
+WHILE (st.size != 0)
     result.push(st.pop)
 
 MERGED_INTERVALS: result
@@ -364,8 +366,7 @@ mergeSortAndCount(arr, l, r)
         count += mergeSortAndCount(arr, m + 1, r)
         count += mergeAndCount(arr, l, m, r)
 
-    TOTAL_NUMBER_OF_INVERSIONS:  count
-
+    TOTAL_NUMBER_OF_INVERSIONS: count
 }
 
 ```
@@ -374,43 +375,31 @@ mergeSortAndCount(arr, l, r)
 Best Time to Buy and Sell Stock
 </a></li></h4>
 
-```
+Time Complexity: O(n) <br />
+Space Complexity: O(1) <br />
+Approach: peaks and valleys
 
+```
 minPrice = INF
 maxProfit = 0
 
 i: 0 -> n - 1
     IF minPrice > prices[i]
         minPrice = prices[i]
-    ELIF maxProfit < prices[i] - minPrice
-        maxProfit = prices[i] - minPrice
+    ELSE
+        maxProfit = max(maxProfit, prices[i] - minPrice)
 
-max profit : maxProfit
 
+MAX_PROFIT: maxProfit
 ```
 
-<h4><li><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/">
-Best Time to Buy and Sell Stock
-</a></li></h4>
-
-```
-
-minPrice = INF
-maxProfit = 0
-
-i: 0 -> n - 1
-    IF minPrice > prices[i]
-        minPrice = prices[i]
-    ELIF maxProfit < prices[i]-minPrice
-        maxProfit = prices[i] - minPrice
-
-MAX_PROFIT : maxProfit
-
-```
 
 <h4><li><a href="https://leetcode.com/problems/rotate-image/">
 Rotate Image
 </a></li></h4>
+
+Time complexity : O(N^2)
+Space complexity : O(1)
 
 ```
 
@@ -435,27 +424,27 @@ i: 0 -> n
 Search a 2D Matrix
 </a></li></h4>
 
-```
 
+```
 start = 0
 end = (n * m) - 1
 
-WHILE start <= end
+WHILE (start <= end)
     mid = (start + end) / 2
     i = mid / m
     j = mid % m
 
-    IF matrix[i][j] < target
+    IF (matrix[i][j] < target)
         start = mid + 1
 
-    ELIF matrix[i][j] > target
+    ELIF (matrix[i][j] > target)
         end = mid - 1
 
     ELSE
         RETURN true
 
-RETURN false
 
+RETURN false
 ```
 
 <h4><li><a href="https://leetcode.com/problems/search-a-2d-matrix/">
@@ -483,7 +472,6 @@ myPow(x, n)
 
     ELSE
         RETURN x * myPow(myPow(x, n/2), 2)
-
 }
 
 ```
@@ -524,14 +512,15 @@ secondSum = 0
 firstMajor = INF
 secondMajor = -INF
 
-i: 0 -> n - 1
-    IF nums[i] == firstMajor
+
+FOR (i: 0 -> n - 1)
+    IF (nums[i] == firstMajor)
         firstSum++
 
-    ELIF nums[i] == secondMajor
+    ELIF (nums[i] == secondMajor)
         secondSum++
 
-    ELIF firstSum == 0
+    ELIF (firstSum == 0)
         firstMajor = nums[i]
         firstSum = 1
 
@@ -543,23 +532,25 @@ i: 0 -> n - 1
         firstSum--
         secondSum--
 
+
 firstSum = 0
 secondSum = 0
 
-i: 0 -> n - 1
-    IF nums[i] == firstMajor
+
+FOR (i: 0 -> n - 1)
+    IF (nums[i] == firstMajor)
         firstSum++
-    ELIF nums[i] == secondMajor
+    ELIF (nums[i] == secondMajor)
         secondSum++
 
-IF firstSum > n/3
+IF (firstSum > n/3)
     result.add(firstMajor)
 
-IF secondSum > n/3
+IF (secondSum > n/3)
     result.add(secondMajor)
 
-MAJORITY_ELEMENT: result
 
+MAJORITY_ELEMENT: result
 ```
 
 <h4><li><a href="https://leetcode.com/problems/unique-paths/">
@@ -567,22 +558,22 @@ Unique Paths
 </a></li></h4>
 
 ```
+int dp[n][m]
 
-dp[m][n]
-
-i: m - 1 -> 0
-    j: n - 1 -> 0
-        IF i == m - 1 AND j == n - 1
+FOR (i: n - 1 -> 0)
+    FOR (j: m - 1 -> 0)
+        IF (i == n - 1 AND j == m - 1)
             dp[i][j] = 1
 
-        ELIF i == m - 1
+        ELIF (i == n - 1)
             dp[i][j] = dp[i][j + 1]
 
-        ELIF j == n - 1
+        ELIF (j == m - 1)
             dp[i][j] = dp[i + 1][j]
 
         ELSE
             dp[i][j] = dp[i + 1][j] + dp[i][j + 1]
+
 
 NUMBER_OF_UNIQUE_PATHS: dp[0][0]
 ```
@@ -614,7 +605,7 @@ mergeSort(nums, left, right) {
     count = 0
     l = left
     r = middle+1
-    WHILE l <= middle
+    WHILE (l <= middle):
         IF r > right OR long)nums[l] <= 2*long)nums[r]
             l++
             ret += count
@@ -648,7 +639,6 @@ Two Sum
 </a></li></h4>
 
 ```
-
 result = new int[2]
 
 map = new HashMap<Integer, Integer>
@@ -662,7 +652,6 @@ if map.containsKey(target - nums[i])
     map.put(nums[i], i)
 
 RETURN result
-
 ```
 
 <h4><li><a href="https://leetcode.com/problems/3sum/">
@@ -670,26 +659,24 @@ RETURN result
 </a></li></h4>
 
 ```
-
-given: int[] nums
-
 Arrays.sort(nums)
+
 res = new List<List<Integer>>
 
-i: 0 -> (n - 3)
-    if i == 0 OR (i > 0 AND nums[i] != nums[i-1])
+for (i: 0 -> (n - 3))
+    if (i == 0 OR (i > 0 AND nums[i] != nums[i-1]))
         lo = i + 1
         hi = n - 1
         sum = 0 - nums[i]
 
-        WHILE lo < hi
+        WHILE (lo < hi)
             IF nums[lo] + nums[hi] == sum
                 res.add({ nums[i], nums[lo], nums[hi] })
 
-                WHILE lo < hi && nums[lo] == nums[lo + 1]
+                WHILE (lo < hi && nums[lo] == nums[lo + 1])
                     lo++
 
-                WHILE lo < hi && nums[hi] == nums[hi - 1]
+                WHILE (lo < hi && nums[hi] == nums[hi - 1])
                     hi--
 
                 lo++
@@ -701,8 +688,8 @@ i: 0 -> (n - 3)
             ELSE
                 hi--
 
-RETURN res
 
+RETURN res
 ```
 
 <h4><li><a href="https://leetcode.com/problems/4sum/">
@@ -1344,45 +1331,49 @@ minimum number of coins: dp[amount]
 <ol>
 
 <h4><li><a href="https://leetcode.com/problems/subsets/">
-Subsets
+Subsets (contains duplicates)
 </a></li></h4>
 
 ```
-
 subsets (nums)
-sort(nums)
-
+{
     List<List<Integer>> list
     backtrack(list, new ArrayList, nums, 0)
-
     RETURN list
+}
+
 
 backtrack (list, tempList, nums, start)
-list.add(tempList)
+{
+    list.add(tempList)
 
-    i: start -> nums.length - 1
+    for (i: start -> nums.length - 1)
         tempList.add(nums[i])
         backtrack(list, tempList, nums, i + 1)
         tempList.remove(tempList.size - 1)
-
+}
 ```
 
 <h4><li><a href="https://leetcode.com/problems/subsets-ii/">
-Subsets II (contains duplicates)
+Subsets II (contains no duplicates)
 </a></li></h4>
 
 ```
 
 subsetsWithDup (nums)
-List<List<Integer>> list
-sort(nums)
-backtrack(list, new ArrayList<>, nums, 0)
-RETURN list
+{
+    List<List<Integer>> list
+    sort(nums)
+    backtrack(list, new ArrayList, nums, 0)
+    RETURN list
+}
 
-private void backtrack (list, tempList, nums, start)
-list.add(tempList)
 
-    i: start -> nums.length - 1
+backtrack (list, tempList, nums, start)
+{
+    list.add(tempList)
+
+    FOR (i: start -> nums.length - 1)
         <- Skip duplicates ->
         IF i > start AND nums[i] == nums[i-1]
             CONTINUE
@@ -1390,14 +1381,12 @@ list.add(tempList)
         tempList.add(nums[i])
         backtrack(list, tempList, nums, i + 1)
         tempList.remove(tempList.size - 1)
-
+}
 ```
 
-<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
-Find the Duplicate Number
+<h4><li><a href="https://leetcode.com/problems/combination-sum/">
+Combination Sum
 </a></li></h4>
-
-[**41.3 Combination Sum**](https://leetcode.com/problems/combination-sum/)
 
 ```
 combinationSum (nums, target)
@@ -1425,17 +1414,14 @@ backtrack (list, tempList, nums, remain, start)
 }
 ```
 
-<h4><li><a href="https://leetcode.com/problems/find-the-duplicate-number/">
-Find the Duplicate Number
+<h4><li><a href="https://leetcode.com/problems/combination-sum-ii/">
+Combination Sum II (can't reuse same element)
 </a></li></h4>
 
-[**41.4 Combination Sum II**](https://leetcode.com/problems/combination-sum-ii/)
-
 ```
-
 combinationSum2 (nums, target)
 {
-    List<List<Integer>> list
+    list = new List<List<Integer>>
     sort(nums)
     backtrack(list, new ArrayList, nums, target, 0)
     RETURN list
@@ -1443,16 +1429,16 @@ combinationSum2 (nums, target)
 
 backtrack (list, tempList, nums, remain, start)
 {
-    IF remain < 0
+    IF (remain < 0)
         RETURN
 
-    ELIF remain == 0
+    ELIF (remain == 0)
         list.add(tempList)
 
     ELSE
-        i: start -> nums.length - 1
+        FOR (i: start -> nums.length - 1)
             <- skip duplicates ->
-            IF i > start AND nums[i] == nums[i-1]
+            IF (i > start AND nums[i] == nums[i-1])
                 continue
 
             tempList.add(nums[i])
@@ -1466,7 +1452,6 @@ Palindrome Partitioning
 </a></li></h4>
 
 ```
-
 partition (s)
 {
     List<List<String>> list
@@ -1516,11 +1501,10 @@ KTH_PERMUTATION_SEQUENCE: sb.toString
 ```
 
 <h4><li><a href="https://leetcode.com/problems/permutations/">
-Permutations (no duplicates
+Permutations (no duplicates)
 </a></li></h4>
 
 ```
-
 permute (nums)
 {
     List<List<Integer>> list
@@ -1534,29 +1518,88 @@ backtrack (list, tempList, nums)
        list.add(tempList)
 
     else
-        i: 0 -> nums.length - 1
+        for(i: 0 -> nums.length - 1)
             <- If element already exists, skip ->
-            if tempList.contains(nums[i])
+            if (tempList.contains(nums[i]))
                 continue
 
             tempList.add(nums[i])
             backtrack(list, tempList, nums)
             tempList.remove(tempList.size - 1)
 }
+
+```
+
+<h4><li><a href="https://leetcode.com/problems/permutations/">
+Permutations II (contains duplicates)
+</a></li></h4>
+
+```
+permuteUnique (nums)
+{
+    list = new List<List<Integer>>
+    sort(nums)
+    backtrack(list, new List, nums, new boolean[nums.length])
+    return list
+}
+
+backtrack (list, tempList, nums, used)
+{
+    IF (tempList.size == nums.length)
+        list.add(tempList)
+
+    ELSE
+        FOR (i: 0 -> nums.length - 1)
+            if(used[i] OR (i > 0 AND nums[i] == nums[i-1]))
+                continue
+
+            used[i] = true
+            tempList.add(nums[i])
+
+            backtrack(list, tempList, nums, used)
+
+            used[i] = false
+            tempList.remove(tempList.size - 1)
+}
 ```
 
 </ol>
+
 <h1>Recursion and Backtracking</h1>
+
 <ol>
+
+<h4><li><a href="https://www.geeksforgeeks.org/c-program-for-tower-of-hanoi/">
+Tower of Hanoi
+</a></li></h4>
+
+```
+towerOfHanoi(n, A, B, C)
+{
+    if (n == 1)
+        sout("Move disk 1 from rod "+ A +" to rod "+B)
+        return
+
+    towerOfHanoi(n - 1, A, C, B)
+    sout("Move disk "+ n + " from rod " + A +" to rod " + B)
+    towerOfHanoi(n - 1, C, B, A)
+}
+
+// Driver code
+public static void  main(String args[])
+{
+    int n = 4
+    towerOfHanoi(n, 'A', 'C', 'B') // A, B and C are names of rods
+}
+```
 
 <h4><li><a href="https://leetcode.com/problems/n-queens/">
 N-Queens
 </a></li></h4>
 
+Approach: bit manipulation
+
 ```
-
-APPROACH: bit manipulation
-
 char[][] board
 columnBit = 0
 normalDiagonal = 0
@@ -1566,20 +1609,20 @@ List<List<String>> res
 operateOnBoard (operation, row, col)
 {
     board[row][col] = operation == "insert" ? 'Q' : '.'
-    columnBit ^= 1 << col
-    normalDiagonal ^= 1 << row + col
-    reverseDiagonal ^= 1 << row - col + board.length - 1
+    columnBit ^= (1 << col)
+    normalDiagonal ^= (1 << row + col)
+    reverseDiagonal ^= (1 << row - col + board.length - 1)
 }
 
 checkSquare (row, col)
 {
-    if columnBit & (1 << col) != 0
+    IF (columnBit & (1 << col) != 0)
         RETURN false
 
-    if normalDiagonal & (1 << (row + col)) != 0
+    IF (normalDiagonal & (1 << (row + col)) != 0)
         RETURN false
 
-    if reverseDiagonal & (1 << (row - col + board.length - 1)) != 0
+    IF (reverseDiagonal & (1 << (row - col + board.length - 1)) != 0)
         RETURN false
 
     RETURN true
@@ -1594,18 +1637,20 @@ solveNQueens (n)
 
     solve(0)
     RETURN res
+}
 
 solve (row)
 {
-    if row == board.length
-    List<String> path
+    IF (row == board.length)
+        path = new List<String>
 
-        i: 0 -> board.length - 1
+        FOR (i:0 -> board.length - 1)
             path.add(new String(board[i]))
 
         res.add(path)
 
-    col: 0 -> board.length - 1
+
+    FOR (col:0 -> board.length - 1)
         if checkSquare(row, col)
             operateOnBoard("insert", row, col)
             solve(row + 1)
@@ -1927,8 +1972,8 @@ SEARCH_INDEX: lo
 Search in Rotated Sorted Array
 </a></li></h4>
 
+Approach: Binary Search
 ```
-APPROACH: binary search
 
 lo = 0
 hi = n - 1
@@ -2436,7 +2481,6 @@ Largest Rectangle in Histogram
 </a></li></h4>
 
 ```
-
 <- idx of the first bar the left that is lower than current ->
 int[n] lessFromLeft
 
@@ -2446,27 +2490,33 @@ int [n] lessFromRight
 lessFromRight[n - 1] = n
 lessFromLeft[0] = -1
 
-i: 1 -> n - 1
-p = i - 1
-WHILE p >= 0 AND height[p] >= height[i]
-p = lessFromLeft[p]
+FOR (i: 1 -> n-1)
+    p = i - 1
+
+    WHILE (p >= 0 AND height[p] >= height[i])
+        p = lessFromLeft[p]
 
     lessFromLeft[i] = p
 
-i: n - 2 -> 0
-p = i + 1
-WHILE p < n AND height[p] >= height[i]
-p = lessFromRight[p]
+
+FOR (i: n-2 -> 0)
+    p = i + 1
+
+    WHILE (p < n AND height[p] >= height[i])
+        p = lessFromRight[p]
 
     lessFromRight[i] = p
 
+
+
 maxArea = 0
 
-i: 0 -> n - 1
-maxArea = max(maxArea, height[i] \* (lessFromRight[i] - lessFromLeft[i] - 1))
+FOR (i: 0 -> n - 1)
+    maxArea = max(maxArea,
+    height[i] * (lessFromRight[i] - lessFromLeft[i] - 1))
+
 
 RETURN maxArea
-
 ```
 
 <h4><li><a href="https://leetcode.com/problems/sliding-window-maximum/">
@@ -2941,18 +2991,17 @@ Print Left View of a Binary Tree
 </a></li></h4>
 
 ```
-
 APPROACH 1: Iterating method using Queue
 
 if root == null
-RETURN
+    RETURN
 
 queue = new Queue<Node>
 queue.add(root)
 
 while !queue.isEmpty
 <- number of nodes at current level ->
-n = queue.size
+    n = queue.size
 
     <- Traverse all nodes of current level ->
     i: 1 -> n
@@ -3517,13 +3566,239 @@ predecessor: p[0]
 successor: q[0]
 
 ```
+</ol>
+<ol>
+
+<h1>Amazon</h1>
 
 <h4><li><a href="">
+Spiral Matrix
 </a></li></h4>
 
 ```
+https://leetcode.com/problems/spiral-matrix/discuss/20599/Super-Simple-and-Easy-to-Understand-Solution
+```
+<h4><li><a href="">
+Spiral Matrix II
+</a></li></h4>
 
+```
+https://leetcode.com/problems/spiral-matrix-ii/discuss/22289/My-Super-Simple-Solution.-Can-be-used-for-both-Spiral-Matrix-I-and-II
+```
+
+<h4><li><a href="">
+Unique Paths
+</a></li></h4>
+
+```
+https://leetcode.com/problems/unique-paths-ii/discuss/23291/Java-Solution-using-Dynamic-Programming-O(1)-space
+```
+<h4><li><a href="">
+Climbing Stairs
+</a></li></h4>
+
+```
+https://leetcode.com/problems/climbing-stairs/discuss/963994/Java-from-Recursion-to-DP
+
+```
+<h4><li><a href="">
+Swap Nodes in Pairs
+</a></li></h4>
+
+```
+https://leetcode.com/problems/swap-nodes-in-pairs/discuss/11046/My-simple-JAVA-solution-for-share
+
+```
+
+<h4><li><a href="">
+Merge Two Sorted Lists
+</a></li></h4>
+
+```
+https://leetcode.com/problems/merge-two-sorted-lists/discuss/9715/Java-1-ms-4-lines-codes-using-recursion
+
+```
+<h4><li><a href="">
+Generate Parentheses
+</a></li></h4>
+
+```
+https://leetcode.com/problems/generate-parentheses/discuss/10100/Easy-to-understand-Java-backtracking-solution
+
+```
+<h4><li><a href="">
+Letter Combinations of a Phone Number
+</a></li></h4>
+
+```
+https://leetcode.com/problems/letter-combinations-of-a-phone-number/discuss/8109/My-recursive-solution-using-Java
+
+```
+<h4><li><a href="">
+Merge k Sorted Lists
+</a></li></h4>
+
+```
+https://leetcode.com/problems/merge-k-sorted-lists/discuss/10528/A-java-solution-based-on-Priority-Queue
+
+```
+<h4><li><a href="">
+Reverse Nodes in k-Group
+</a></li></h4>
+
+```
+https://leetcode.com/problems/reverse-nodes-in-k-group/discuss/11423/Short-but-recursive-Java-code-with-comments
+
+```
+<h4><li><a href="">
+Longest Valid Parentheses
+</a></li></h4>
+
+```
+https://leetcode.com/problems/longest-valid-parentheses/discuss/14147/My-simple-8ms-C%2B%2B-code
+
+```
+<h4><li><a href="">
+Longest Valid Parentheses
+</a></li></h4>
+
+```
+https://leetcode.com/problems/longest-valid-parentheses/discuss/14147/My-simple-8ms-C%2B%2B-code
+```
+<h4><li><a href="">
+Search in Rotated Sorted Array
+</a></li></h4>
+
+```
+https://leetcode.com/problems/search-in-rotated-sorted-array/discuss/14425/Concise-O(log-N)-Binary-search-solution
+```
+<h4><li><a href="">
+Search in Rotated Sorted Array
+</a></li></h4>
+
+```
+https://leetcode.com/problems/search-in-rotated-sorted-array/discuss/14425/Concise-O(log-N)-Binary-search-solution
+```
+<h4><li><a href="">
+First Missing Positive
+</a></li></h4>
+
+```
+https://leetcode.com/problems/first-missing-positive/discuss/17071/My-short-c%2B%2B-solution-O(1)-space-and-O(n)-time
+```
+<h4><li><a href="">
+Jump Game
+</a></li></h4>
+
+```
+https://leetcode.com/problems/jump-game/discuss/20917/Linear-and-simple-solution-in-C%2B%2B
+```
+<h4><li><a href="">
+Jump Game II
+</a></li></h4>
+
+```
+https://leetcode.com/problems/jump-game/discuss/20923/Java-Solution-easy-to-understand
+```
+
+<h4><li><a href="">
+Jump Game II
+</a></li></h4>
+
+```
+https://leetcode.com/problems/jump-game/discuss/20923/Java-Solution-easy-to-understand
+```
+<h4><li><a href="">
+Group Anagrams
+</a></li></h4>
+
+```
+https://leetcode.com/problems/group-anagrams/discuss/19176/Share-my-short-JAVA-solution
+```
+<h4><li><a href="">
+Group Anagrams
+</a></li></h4>
+
+```
+https://leetcode.com/problems/group-anagrams/discuss/19176/Share-my-short-JAVA-solution
+```
+<h4><li><a href="">
+Insert Interval
+</a></li></h4>
+
+```
+https://leetcode.com/problems/insert-interval/discuss/21602/Short-and-straight-forward-Java-solution
+```
+<h4><li><a href="">
+Insert Interval
+</a></li></h4>
+
+```
+https://leetcode.com/problems/insert-interval/discuss/21602/Short-and-straight-forward-Java-solution
+```
+<h4><li><a href="">
+Minimum Path Sum
+</a></li></h4>
+
+```
+https://leetcode.com/problems/minimum-path-sum/
+```
+<h4><li><a href="">
+Minimum Path Sum
+</a></li></h4>
+
+```
+https://leetcode.com/problems/minimum-path-sum/
+```
+<h4><li><a href="">
+Sqrt(x)
+</a></li></h4>
+
+```
+https://leetcode.com/problems/sqrtx/discuss/25057/3-4-short-lines-Integer-Newton-Every-Language
+```
+<h4><li><a href="">
+Sqrt(x)
+</a></li></h4>
+
+```
+https://leetcode.com/problems/sqrtx/discuss/25057/3-4-short-lines-Integer-Newton-Every-Language
+```
+<h4><li><a href="">
+Invert Binary Tree
+</a></li></h4>
+
+```
+https://leetcode.com/problems/invert-binary-tree/discuss/62707/Straightforward-DFS-recursive-iterative-BFS-solutions
+
+```
+<h4><li><a href="">
+Invert Binary Tree
+</a></li></h4>
+
+```
+https://leetcode.com/problems/invert-binary-tree/discuss/62707/Straightforward-DFS-recursive-iterative-BFS-solutions
+```
+<h4><li><a href="">
+Invert Binary Tree
+</a></li></h4>
+
+```
+https://leetcode.com/problems/invert-binary-tree/discuss/62707/Straightforward-DFS-recursive-iterative-BFS-solutions
+```
+<h4><li><a href="">
+Word Search
+</a></li></h4>
+
+```
+https://leetcode.com/problems/word-search/discuss/27658/Accepted-very-short-Java-solution.-No-additional-space.
+```
+<h4><li><a href="">
+Number of Islands
+</a></li></h4>
+
+```
+https://leetcode.com/problems/number-of-islands/discuss/56359/Very-concise-Java-AC-solution
 ```
 
 </ol>
-```

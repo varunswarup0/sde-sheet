@@ -1,0 +1,38 @@
+✔ Coding. Given a file which has different numbers in each line. Read the file and if a number is divisible by 5 print(‘a’). if it’s divisible by 3 print(‘b’). if it’s divisible by 15 print(‘c’); @done(21-10-19 17:40)
+✔ Travelling salesman problem. He asked to code. I did it. @done(21-10-19 18:09)
+Using python libraries is allowed. I did it using pandas. (We can consider tables as csv files).
+
+✔ find the frequency of a number in a sorted array @done(21-10-19 18:19)
+✔ implement binary search) @done(21-10-19 18:19)
+
+✔ find mid element of a Linked List @done(21-10-19 17:38)
+✔ find merging point of 2 linked lists @done(21-10-19 18:20)
+✔ print right view of a binary search tree @done(21-10-19 18:26)
+✔ An apparently tricky question that could be solved greedily. @done(21-10-19 19:17)
+✔ Question 2: https://www.geeksforgeeks.org/find-number-of-islands/. The interviewer further asked if this could be done by using constant extra space. @done(21-10-19 18:36)
+✔ Make a queue out of 2 stacks, as it was easy he asked me to code and asked me the complexities. @done(21-10-19 19:44)
+✔ Given a linked list with a loop find the loop and make it straight @done(21-10-19 19:45)
+✔ I did with HashMap but he told me not to use extra space so i told him Floyd’s cycle. @done(21-10-19 19:45)
+
+✔ Given a Binary tree convert into a BST no auxiliary space (i did it with an inorder traversal) he asked me to code. @done(21-10-19 21:23)
+I told him a solution using a hashmap then he modified that he may have millions of unique characters not just alphabets.
+i gave a solution with a linked list and a hashmap. This question was not asked to me but was to my friend .Its a good one.
+
+✔ print all the binary values of number from 1 to n , each number’s binary should be printed in 0(1). @done(21-10-19 19:32)
+for eg: n = 6
+then print 1 10 11 100 101 110. printing 1, 10 ,11 ,100,101,110 should be in o(1) each
+
+@critical
+✘ Convert a BST into inorder, preorder and postorder linkedlists inplace. @cancelled(21-10-19 21:24)
+✘ Zig Zag traversal in a binary tree. @cancelled(21-10-19 19:58)
+✘ 2) Given an infinite stream of characters find the first non repeating character at any instance, The storing,retrieval should be o(1) . @cancelled(21-10-19 20:30)
+✘ https://www.geeksforgeeks.org/next-higher-palindromic-number-using-set-digits/ @cancelled(21-10-19 20:57)
+
+✔ There was one more question based on maps @done(21-10-19 19:54)
+✔ Difference between map and unordered_map @done(21-10-19 19:56)
+
+✔ Finding complement and 2s complement of a binary number (Didn’t have to code it just find it for say 100011) @done(21-10-19 19:16)
+✔ Some questions based on DBMS (basic queries) @done(21-10-19 19:32)
+✔ A variant of Binary tree traversal. I was given a tree and the output was given had to identify the type of traversal and then code it out. @done(21-10-19 19:33)
+✔ It was right_subtree->left_subtree->root @done(21-10-19 19:33)
+✔ Stock buy to sell to maximize profit problem @done(21-10-19 19:33)

@@ -1,0 +1,269 @@
+@amazon
+@critical
+✘ 4. Median of Two Sorted Arrays @cancelled(21-10-20 12:26)
+✘ 33. Wildcard Matching @cancelled(21-10-20 18:34)
+
+@high
+✘ 6. Reverse Integer @cancelled(21-10-20 12:26)
+✘ 7. String to Integer (atoi) @cancelled(21-10-20 12:26)
+✘ 9. Integer to Roman @cancelled(21-10-20 12:26)
+✘ 14. 4Sum @cancelled(21-10-20 12:26)
+✘ 21. Divide Two Integers @cancelled(21-10-20 14:24)
+✘ 22. Substring with Concatenation of All Words @cancelled(21-10-20 14:26)
+✘ 32. Multiply Strings @cancelled(21-10-20 19:30)
+
+@today
+✘ 26. Valid Sudoku @cancelled(21-10-20 17:51)
+
+
+@low
+✔ 13. Letter Combinations of a Phone Number @done(21-10-20 13:26)
+✔ 1. Two Sum @done(21-10-19 21:37)
+✔ 2. Add Two Numbers @done(21-10-19 21:37)
+✔ 3. Longest Substring Without Repeating Characters @done(21-10-19 21:37)
+✔ 8. Container With Most Water @done(21-10-19 21:53)
+✔ 5. Longest Palindromic Substring @done(21-10-19 21:45)
+✔ 10. Roman to Integer @done(21-10-19 21:59)
+✔ 11. 3Sum @done(21-10-19 22:05)
+✔ 12. 3Sum Closest @done(21-10-19 22:13)
+✔ 15. Valid Parentheses @done(21-10-20 12:17)
+✔ 16. Merge Two Sorted Lists @done(21-10-20 13:16)
+✔ 17. Generate Parentheses @done(21-10-20 13:22)
+✔ 18. Merge k Sorted Lists @done(21-10-20 13:30)
+✔ 19. Swap Nodes in Pairs @done(21-10-20 13:10)
+✔ 20. Reverse Nodes in k-Group @done(21-10-20 14:22)
+✔ 23. Next Permutation @done(21-10-20 00:49)
+✔ 24. Longest Valid Parentheses @done(21-10-20 14:38)
+✔ 25. Search in Rotated Sorted Array @done(21-10-20 15:20)
+✔ 27. Sudoku Solver @done(21-10-20 17:52)
+✔ 28. Combination Sum @done(21-10-20 12:23)
+✔ 29. Combination Sum II @done(21-10-20 12:23)
+✔ 30. First Missing Positive @done(21-10-20 18:01)
+✔ 31. Trapping Rain Water @done(21-10-20 18:27)
+✔ 34. Jump Game II @done(21-10-20 19:49)
+✔ 35. Permutations @done(21-10-20 00:40)
+✔ 36. Permutations II @done(21-10-20 00:40)
+✔ 37. Rotate Image @done(21-10-20 00:40)
+✔ 38. Group Anagrams @done(21-10-20 21:39)
+✔ 39. Pow(x, n) @done(21-10-20 00:54)
+✔ 40. N-Queens @done(21-10-20 12:16)
+✔ 41. Maximum Subarray @done(21-10-20 12:23)
+✔ 42. Spiral Matrix @done(21-10-20 12:05)
+✔ 43. Jump Game @done(21-10-20 19:32)
+✔ 44. Merge Intervals @done(21-10-20 00:53)
+✔ 45. Insert Interval @done(21-10-20 21:42)
+✔ 46. Spiral Matrix II @done(21-10-20 12:10)
+✔ 47. Rotate List @done(21-10-20 12:13)
+✔ 48. Unique Paths @done(21-10-20 13:00)
+✔ 49. Unique Paths II @done(21-10-20 13:02)
+✔ 50. Minimum Path Sum @done(21-10-20 21:48)
+✔ 51. Sqrt(x) @done(21-10-20 21:52)
+✔ 52. Climbing Stairs @done(21-10-20 13:07)
+✘ 53. Simplify Path @cancelled(21-10-20 21:54)
+✔ 54. Search a 2D Matrix @done(21-10-20 21:54)
+✔ 55. Sort Colors @done(21-10-20 00:45)
+✘ 56. Minimum Window Substring @cancelled(21-10-20 21:56)
+✔ 57. Subsets @done(21-10-20 00:45)
+✔ 58. Word Search @done(21-10-20 21:58)
+☐ 59. Largest Rectangle in Histogram
+☐ 60. Partition List
+✔ 61. Subsets II @done(21-10-20 00:45)
+☐ 62. Reverse Linked List II
+☐ 63. Restore IP Addresses
+☐ 64. Unique Binary Search Trees
+☐ 65. Validate Binary Search Tree
+☐ 66. Recover Binary Search Tree
+☐ 67. Symmetric Tree
+☐ 68. Binary Tree Level Order Traversal
+☐ 69. Binary Tree Zigzag Level Order Traversal
+☐ 70. Construct Binary Tree from Preorder and Inorder Traversal
+☐ 71. Construct Binary Tree from Inorder and Postorder Traversal
+☐ 72. Convert Sorted List to Binary Search Tree
+☐ 73. Balanced Binary Tree
+☐ 74. Minimum Depth of Binary Tree
+☐ 75. Path Sum II
+✔ 76. Flatten Binary Tree to Linked List @done(21-10-20 00:46)
+☐ 77. Populating Next Right Pointers in Each Node
+☐ 78. Populating Next Right Pointers in Each Node II
+☐ 79. Best Time to Buy and Sell Stock
+☐ 80. Best Time to Buy and Sell Stock II
+☐ 81. Binary Tree Maximum Path Sum
+☐ 82. Word Ladder II
+☐ 83. Word Ladder
+☐ 84. Longest Consecutive Sequence
+☐ 85. Surrounded Regions
+☐ 86. Palindrome Partitioning II
+☐ 87. Clone Graph
+☐ 88. Single Number II
+☐ 89. Copy List with Random Pointer
+☐ 90. Word Break
+☐ 91. Word Break II
+✔ 92. Linked List Cycle @done(21-10-20 00:46)
+☐ 93. Reorder List
+☐ 94. Binary Tree Postorder Traversal
+☐ 95. LRU Cache
+☐ 96. Sort List
+☐ 97. Max Points on a Line
+☐ 98. Evaluate Reverse Polish Notation
+☐ 99. Reverse Words in a String
+☐ 100. Maximum Product Subarray
+☐ 101. Find Minimum in Rotated Sorted Array
+☐ 102. Min Stack
+☐ 103. Compare Version Numbers
+☐ 104. Two Sum II - Input array is sorted
+☐ 105. Binary Search Tree Iterator
+☐ 106. Dungeon Game
+☐ 107. Department Highest Salary
+☐ 108. Binary Tree Right Side View
+✔ 109. Number of Islands @done(21-10-20 23:35)
+☐ 110. Remove Linked List Elements
+☐ 111. Reverse Linked List
+☐ 112. Course Schedule
+☐ 113. Implement Trie (Prefix Tree)
+☐ 114. Course Schedule II
+☐ 115. Design Add and Search Words Data Structure
+☐ 116. Word Search II
+☐ 117. Kth Largest Element in an Array
+☐ 118. The Skyline Problem
+☐ 119. Maximal Square
+☐ 120. Count Complete Tree Nodes
+✔ 121. Invert Binary Tree @done(21-10-20 23:29)
+☐ 122. Summary Ranges
+✔ 123. Majority Element II @done(21-10-20 23:31)
+☐ 124. Kth Smallest Element in a BST
+☐ 125. Implement Queue using Stacks
+☐ 126. Number of Digit One
+✔ 127. Palindrome Linked List @done(21-10-20 23:40)
+☐ 128. Lowest Common Ancestor of a Binary Search Tree
+☐ 129. Lowest Common Ancestor of a Binary Tree
+☐ 130. Product of Array Except Self
+☐ 131. Sliding Window Maximum
+☐ 132. Search a 2D Matrix II
+☐ 133. Binary Tree Paths
+☐ 134. Single Number III
+☐ 135. Missing Number
+☐ 136. Integer to English Words
+☐ 137. Peeking Iterator
+☐ 138. Find the Duplicate Number
+☐ 139. Game of Life
+☐ 140. Find Median from Data Stream
+☐ 141. Serialize and Deserialize Binary Tree
+☐ 142. Longest Increasing Subsequence
+☐ 143. Range Sum Query - Mutable
+☐ 144. Best Time to Buy and Sell Stock with Cooldown
+☐ 145. Burst Balloons
+☐ 146. Count of Smaller Numbers After Self
+☐ 147. Coin Change
+☐ 148. Odd Even Linked List
+☐ 149. Longest Increasing Path in a Matrix
+☐ 150. Increasing Triplet Subsequence
+☐ 151. Palindrome Pairs
+☐ 152. Flatten Nested List Iterator
+☐ 153. Top K Frequent Elements
+☐ 154. Intersection of Two Arrays
+☐ 155. Find K Pairs with Smallest Sums
+☐ 156. Kth Smallest Element in a Sorted Matrix
+☐ 157. Insert Delete GetRandom O(1)
+☐ 158. Shuffle an Array
+☐ 159. First Unique Character in a String
+☐ 160. Decode String
+☐ 161. Evaluate Division
+☐ 162. Remove K Digits
+☐ 163. Frog Jump
+☐ 164. Longest Palindrome
+☐ 165. Pacific Atlantic Water Flow
+☐ 166. All O`one Data Structure
+☐ 167. Find All Duplicates in an Array
+☐ 168. Add Two Numbers II
+☐ 169. Serialize and Deserialize BST
+☐ 170. Delete Node in a BST
+☐ 171. Sort Characters By Frequency
+☐ 172. 4Sum II
+☐ 173. LFU Cache
+☐ 174. Island Perimeter
+☐ 175. Concatenated Words
+☐ 176. Sliding Window Median
+☐ 177. Next Greater Element I
+☐ 178. Next Greater Element II
+☐ 179. Most Frequent Subtree Sum
+☐ 180. Find Bottom Left Tree Value
+☐ 181. Longest Palindromic Subsequence
+☐ 182. Coin Change 2
+☐ 183. Minesweeper
+☐ 184. Single Element in a Sorted Array
+☐ 185. Diameter of Binary Tree
+☐ 186. Next Greater Element III
+☐ 187. Subarray Sum Equals K
+☐ 188. Find the Closest Palindrome
+☐ 189. Subtree of Another Tree
+☐ 190. Valid Triangle Number
+☐ 191. Task Scheduler
+☐ 192. Exchange Seats
+☐ 193. Maximum Product of Three Numbers
+☐ 194. Exclusive Time of Functions
+☐ 195. Average of Levels in Binary Tree
+☐ 196. Palindromic Substrings
+☐ 197. 2 Keys Keyboard
+☐ 198. Find Duplicate Subtrees
+☐ 199. Two Sum IV - Input is a BST
+☐ 200. Maximum Binary Tree
+☐ 201. Find K Closest Elements
+☐ 202. Maximum Width of Binary Tree
+☐ 203. Cut Off Trees for Golf Event
+☐ 204. Valid Parenthesis String
+☐ 205. Baseball Game
+☐ 206. Top K Frequent Words
+☐ 207. Max Area of Island
+☐ 208. Longest Word in Dictionary
+☐ 209. Split Linked List in Parts
+☐ 210. My Calendar I
+☐ 211. Flood Fill
+☐ 212. Asteroid Collision
+☐ 213. Daily Temperatures
+☐ 214. Cracking the Safe
+☐ 215. Flatten a Multilevel Doubly Linked List
+☐ 216. Partition Labels
+☐ 217. Reorganize String
+☐ 218. Jewels and Stones
+☐ 219. Insert into a Binary Search Tree
+☐ 220. Sliding Puzzle
+☐ 221. Kth Largest Element in a Stream
+☐ 222. Swim in Rising Water
+☐ 223. Minimum Distance Between BST Nodes
+☐ 224. Is Graph Bipartite?
+☐ 225. K-th Smallest Prime Fraction
+☐ 226. Cheapest Flights Within K Stops
+☐ 227. Custom Sort String
+☐ 228. Preimage Size of Factorial Zeroes Function
+☐ 229. Design HashMap
+☐ 230. Binary Tree Pruning
+☐ 231. Bus Routes
+☐ 232. Linked List Components
+☐ 233. Making A Large Island
+☐ 234. Design Circular Queue
+☐ 235. Keys and Rooms
+☐ 236. Guess the Word
+☐ 237. Shortest Path Visiting All Nodes
+☐ 238. All Nodes Distance K in Binary Tree
+☐ 239. Random Pick with Blacklist
+☐ 240. Minimum Number of Refueling Stops
+☐ 241. Leaf-Similar Trees
+☐ 242. Decoded String at Index
+☐ 243. Maximum Frequency Stack
+☐ 244. Fruit Into Baskets
+☐ 245. Snakes and Ladders
+☐ 246. Range Sum of BST
+☐ 247. Prison Cells After N Days
+☐ 248. Binary Tree Cameras
+☐ 249. K Closest Points to Origin
+☐ 250. Distribute Coins in Binary Tree
+☐ 251. Minimum Cost For Tickets
+☐ 252. Vertical Order Traversal of a Binary Tree
+☐ 253. Subarrays with K Different Integers
+☐ 254. Cousins in Binary Tree
+☐ 255. Find the Town Judge
+☐ 256. Next Greater Node In Linked List
+☐ 257. Binary Search Tree to Greater Sum Tree
+☐ 258. Sum of Nodes with Even-Valued Grandparent
+☐ 259. Minimum Insertion Steps to Make a String Palindrome
+☐ 260. Split a String Into the Max Number of Unique Substrings
