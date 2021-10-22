@@ -643,13 +643,14 @@ result = new int[2]
 
 map = new HashMap<Integer, Integer>
 
-i: 0 -> n - 1
-if map.containsKey(target - nums[i])
-    result[1] = i
-    result[0] = map.get(target - nums[i])
-    RETURN result
+FOR (i: 0 -> n - 1)
+    IF (map.containsKey(target - nums[i]))
+        result[1] = i
+        result[0] = map.get(target - nums[i])
+        RETURN result
 
     map.put(nums[i], i)
+
 
 RETURN result
 ```
@@ -3203,21 +3204,23 @@ Balanced Binary Tree
 </a></li></h4>
 
 ```
-
 isBalanced (root)
-IF root == null
-RETURN true
+{
+    IF (root == null)
+        RETURN true
 
     RETURN abs(maxDepth(root.left) - maxDepth(root.right)) <= 1
             AND isBalanced(root.left)
             AND isBalanced(root.right)
+}
 
 maxDepth (root)
-IF root == null
-RETURN 0
+{
+    IF (root == null)
+        RETURN 0
 
     RETURN 1 + max(maxDepth(root.left), maxDepth(root.right))
-
+}
 ```
 
 <h4><li><a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/">
