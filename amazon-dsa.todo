@@ -1,5 +1,3 @@
-
-
 @low
 ✔ 13. Letter Combinations of a Phone Number @done(21-10-20 13:26)
 ✔ 1. Two Sum @done(21-10-19 21:37)
@@ -115,12 +113,9 @@
 ✘ 14. 4Sum @cancelled(21-10-20 12:26)
 ✘ 21. Divide Two Integers @cancelled(21-10-20 14:24)
 ✘ 22. Substring with Concatenation of All Words @cancelled(21-10-20 14:26)
+✘ 26. Valid Sudoku @cancelled(21-10-20 17:51)
 ✘ 32. Multiply Strings @cancelled(21-10-20 19:30)
 ✘ 53. Simplify Path @cancelled(21-10-20 21:54)
-✘ 26. Valid Sudoku @cancelled(21-10-20 17:51)
-✘ 96. Sort List @cancelled(21-10-20 23:57)
-✘ 172. 4Sum II @cancelled(21-10-21 01:00)
-✘ 173. LFU Cache @cancelled(21-10-21 01:00)
 
 ✘ 62. Reverse Linked List II @cancelled(21-10-21 23:46)
 ✘ 63. Restore IP Addresses @cancelled(21-10-21 23:46)
@@ -142,6 +137,7 @@
 ✘ 89. Copy List with Random Pointer @cancelled(21-10-21 23:42)
 ✘ 90. Word Break @cancelled(21-10-21 23:42)
 ✘ 93. Reorder List @cancelled(21-10-21 23:13)
+✘ 96. Sort List @cancelled(21-10-20 23:57)
 ✘ 98. Evaluate Reverse Polish Notation @cancelled(21-10-21 23:13)
 ✘ 99. Reverse Words in a String @cancelled(21-10-21 23:13)
 ✘ 100. Maximum Product Subarray @cancelled(21-10-21 23:13)
@@ -177,6 +173,8 @@
 ✘ 169. Serialize and Deserialize BST @cancelled(21-10-21 22:33)
 ✘ 171. Sort Characters By Frequency @cancelled(21-10-21 22:33)
 ✘ 170. Delete Node in a BST @cancelled(21-10-21 22:33)
+✘ 172. 4Sum II @cancelled(21-10-21 01:00)
+✘ 173. LFU Cache @cancelled(21-10-21 01:00)
 ✘ 178. Next Greater Element II @cancelled(21-10-21 22:33)
 ✘ 179. Most Frequent Subtree Sum @cancelled(21-10-21 22:33)
 ✘ 180. Find Bottom Left Tree Value @cancelled(21-10-21 22:33)
